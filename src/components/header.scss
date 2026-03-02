@@ -1,0 +1,96 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+/* Header sticky (premium) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: t.$z-header;
+  border-radius: t.$radius-card;
+
+  /* Fond “papier glass” */
+  background: t.$paper-sheen-gradient, t.$color-card-background;
+  border-bottom: 1px solid t.$color-border;
+  box-shadow: t.$shadow-glass;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    background t.$duration-medium t.$ease-in-out,
+    box-shadow t.$duration-medium t.$ease-in-out;
+}
+
+/* État scroll : plus dense + ombre douce */
+.header.is-scrolled {
+  background: t.$paper-sheen-gradient-strong, t.$color-card-background-strong;
+  box-shadow: t.$shadow-glass;
+}
+
+.header__inner {
+  @include m.container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: t.$space-m;
+
+  padding-top: t.$space-xs;
+  padding-bottom: t.$space-xs;
+
+  transition: padding t.$duration-medium t.$ease-in-out;
+}
+
+.header.is-scrolled .header__inner {
+  padding-top: t.$space-2xs;
+  padding-bottom: t.$space-2xs;
+}
+
+.header__brand {
+  display: inline-flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: t.$radius-button;
+  padding: t.$space-2xs t.$space-xs;
+
+  transition:
+    transform t.$duration-fast t.$ease-standard,
+    background t.$duration-fast t.$ease-standard;
+
+  @include m.hover {
+    &:hover {
+      transform: translateY(-1px);
+      background: t.$input-background;
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+.header__logo {
+  height: clamp(48px, 8vw, 75px);
+  width: auto;
+  display: block;
+
+  transition:
+    height t.$duration-medium t.$ease-in-out,
+    transform t.$duration-fast t.$ease-standard;
+}
+
+.header.is-scrolled .header__logo {
+  height: clamp(44px, 7vw, 56px);
+}
+
+/* Reduced motion : pas de transitions */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .header__inner,
+  .header__logo,
+  .header__brand {
+    transition: none !important;
+  }
+}

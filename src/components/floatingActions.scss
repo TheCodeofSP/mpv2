@@ -1,0 +1,123 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.floating-actions {
+  position: fixed;
+  right: t.$space-s;
+  bottom: t.$space-s;
+  z-index: t.$z-overlay;
+
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+/* Scroll to top */
+.floating-actions__top {
+  border-radius: t.$radius-pill;
+  padding: 12px 14px;
+
+  background: t.$color-card-background;
+  color: t.$color-text-primary;
+  box-shadow: t.$shadow-md;
+
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+
+  transition:
+    opacity t.$duration-fast t.$ease-standard,
+    transform t.$duration-fast t.$ease-standard,
+    background t.$duration-fast t.$ease-standard;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  @include m.hover {
+    &:hover {
+      background: t.$color-primary;
+      color: white;
+      transform: translateY(-1px);
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+/* Contact bubble */
+.floating-actions__bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  border-radius: t.$radius-pill;
+  padding: 12px 14px;
+
+  background: t.$color-card-background;
+  color: t.$color-text-primary;
+  box-shadow: t.$shadow-sm;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform t.$duration-fast t.$ease-standard,
+    background t.$duration-fast t.$ease-standard;
+
+  @include m.hover {
+    &:hover {
+      transform: translateY(-1px);
+            background: t.$color-primary;
+      color: white;
+
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+.floating-actions__icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  opacity: 0.9;
+}
+
+.floating-actions__label {
+  font-family: t.$font-family-button;
+  font-weight: t.$font-weight-button;
+  font-size: t.$font-size-button;
+}
+
+/* Mobile */
+@media (max-width: t.$bp-mobile) {
+  .floating-actions__label {
+    display: none;
+  }
+
+  .floating-actions__bubble {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .floating-actions__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

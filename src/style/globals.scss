@@ -1,0 +1,154 @@
+/* globals.scss */
+@use "./tokens.scss" as t;
+@use "./mixins.scss" as m;
+@use "./animations.scss" as a;
+
+/* -----------------------------
+   Reset léger + box sizing
+----------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  // Rend typographie plus agréable
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: t.$color-background;
+  color: t.$color-text-primary;
+
+  font-family: t.$font-family-text;
+  font-size: t.$font-size-text;
+  line-height: t.$line-height-text;
+
+  // Evite les “sauts” de scrollbar (premium feeling)
+  scrollbar-gutter: stable;
+}
+
+/* -----------------------------
+   Media / contenus
+----------------------------- */
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  @include m.text-body;
+}
+
+strong {
+  color: t.$color-title;
+  font-weight: 700;
+}
+
+small {
+  font-family: t.$font-family-small;
+  color: t.$color-text-secondary;
+}
+
+::selection {
+  background: t.$color-accent;
+  color: t.$color-title;
+}
+
+/* -----------------------------
+   Liens
+----------------------------- */
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @include m.focus(3px);
+}
+
+/* -----------------------------
+   Boutons / inputs (base)
+----------------------------- */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+
+  @include m.focus(3px);
+}
+
+input,
+textarea,
+select {
+  border-radius: t.$radius-input;
+  border: 1px solid t.$border-soft;
+  background: t.$surface;
+  padding: 12px 14px;
+
+  @include m.focus(3px);
+
+  &::placeholder {
+    color: t.$color-text-secondary;
+  }
+}
+
+/* -----------------------------
+   Titres : base (optionnel)
+   => tu peux aussi styliser au cas par cas via mixins
+----------------------------- */
+h1 { @include m.title-h1; }
+h2 { @include m.title-h2; }
+h3 { @include m.title-h3; }
+
+ul,
+ol {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: t.$border-soft;
+  margin: t.$spacing-l 0;
+}
+
+/* -----------------------------
+   Helpers global “premium”
+----------------------------- */
+.container {
+  @include m.container;
+}
+
+.section {
+  padding: t.$spacing-xl 0;
+}
+
+.surface {
+  background: t.$surface;
+  border: 1px solid t.$border-soft;
+  border-radius: t.$radius-card;
+  box-shadow: t.$shadow-sm;
+}

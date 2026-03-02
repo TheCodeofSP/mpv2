@@ -1,0 +1,70 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.privacy {
+  width: 100%;
+}
+
+.privacy__content {
+  @include m.content;
+}
+
+/* Header */
+.privacy__header {
+  text-align: center;
+  display: grid;
+  gap: t.$space-xs;
+}
+
+.privacy__title {
+  @include m.title-h1;
+  text-align: center;
+}
+
+.privacy__intro {
+  @include m.text-lead;
+  max-width: t.$measure-text;
+  margin-inline: auto;
+}
+
+/* Cards */
+.privacy__card {
+  @include m.card(t.$color-card-background, t.$shadow-sm);
+}
+
+.privacy__card--contact {
+  background: t.$paper-sheen-gradient, t.$color-surface;
+}
+
+.privacy__h2 {
+  @include m.title-h2;
+  margin-bottom: t.$space-s;
+}
+
+.privacy__p {
+  @include m.text-body;
+  @include m.text-muted;
+
+  max-width: t.$measure-text;
+  margin: 0;
+}
+
+/* Lists */
+.privacy__list {
+  margin: t.$space-s 0 0 0;
+  padding-left: 1.1rem;
+
+  display: grid;
+  gap: t.$space-2xs;
+
+  li {
+    color: t.$color-text-secondary;
+    line-height: t.$line-height-text;
+  }
+}
+
+/* Loading/Error */
+.privacy__state {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  text-align: center;
+}

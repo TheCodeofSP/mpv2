@@ -1,0 +1,334 @@
+@use "./tokens.scss" as t;
+
+/* ======================================================
+   MIXINS — Tronc commun (mobile-first)
+   But : un langage commun simple à réutiliser partout.
+   Pas de mixins “feature” (avatar/faq/toc/etc.)
+   ====================================================== */
+
+/* ----------------------------
+   A11y / Focus
+   ---------------------------- */
+@mixin focus($offset: 2px, $strong: false) {
+  &:focus-visible {
+    outline: 3px solid if($strong, t.$focus-ring-strong, t.$focus-ring);
+    outline-offset: $offset;
+  }
+}
+
+/* Respect reduced motion (premium + a11y) */
+@mixin reduce-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+/* Hover only when device supports hover */
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+/* ----------------------------
+   Layout : containers & sections
+   ---------------------------- */
+@mixin container {
+  max-width: t.$container-max-width;
+  margin: 0 auto;
+  padding: t.$container-padding;
+}
+
+/* Layout page content wrapper */
+@mixin content($gap: t.$space-xl) {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+/* Section wrapper (espacement cohérent entre sections) */
+@mixin section($gap: t.$space-s) {
+  display: grid;
+  gap: $gap;
+}
+
+/* Stack : utile pour listes verticales */
+@mixin stack($gap: t.$space-s) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+/* Limite de mesure pour les textes (lisibilité premium) */
+@mixin measure($max: t.$measure-text) {
+  max-width: $max;
+}
+
+/* ----------------------------
+   Responsive helpers (mobile-first)
+   ---------------------------- */
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+/* optionnel : utile ponctuellement */
+@mixin down($bp) {
+  @media (max-width: ($bp - 1px)) {
+    @content;
+  }
+}
+
+/* optionnel : utile ponctuellement */
+@mixin between($min, $max) {
+  @media (min-width: $min) and (max-width: ($max - 1px)) {
+    @content;
+  }
+}
+
+/* ----------------------------
+   Grid helpers
+   ---------------------------- */
+@mixin grid($cols: 1, $gap: t.$space-l) {
+  display: grid;
+  grid-template-columns: repeat($cols, minmax(0, 1fr));
+  gap: $gap;
+}
+
+/* Auto-fit cards */
+@mixin grid-auto($min: 220px, $gap: t.$space-l) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+  gap: $gap;
+}
+
+/* ----------------------------
+   Typography (normes)
+   ---------------------------- */
+@mixin title-h1 {
+  margin: t.$space-m 0 t.$space-m 0;
+  font-family: t.$font-family-title;
+  font-weight: t.$font-weight-title;
+  font-size: t.$font-size-title;
+  line-height: t.$line-height-title;
+  color: t.$color-title;
+}
+
+@mixin title-h2 {
+  margin: 0 0 t.$space-s 0;
+  font-family: t.$font-family-heading;
+  font-weight: t.$font-weight-heading;
+  font-size: t.$font-size-subtitle;
+  color: t.$color-title;
+}
+
+@mixin title-h3 {
+  margin: 0 0 t.$space-xs 0;
+  font-family: t.$font-family-heading;
+  font-weight: t.$font-weight-heading;
+  font-size: t.$font-size-heading;
+  color: t.$color-title;
+}
+
+@mixin text-body {
+  margin: 0;
+  font-family: t.$font-family-text;
+  font-size: t.$font-size-text;
+  line-height: t.$line-height-text;
+  color: t.$color-text-primary;
+}
+
+@mixin text-muted {
+  color: t.$color-text-secondary;
+}
+
+@mixin text-lead {
+  margin: 0;
+  font-family: t.$font-family-text;
+  font-weight: t.$font-weight-lead;
+  font-size: t.$font-size-lead;
+  line-height: t.$line-height-text;
+  color: t.$color-text-secondary;
+}
+
+/* Petit titre discret (rubrique) */
+@mixin eyebrow {
+  margin: 0 0 t.$space-xs 0;
+  font-family: t.$font-family-heading;
+  font-weight: t.$font-weight-heading;
+  font-size: t.$font-size-small;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: t.$color-text-secondary;
+}
+
+/* ----------------------------
+   Surfaces : cards / panels (génériques)
+   ---------------------------- */
+
+/* Surface “papier/glass” générique (base commune) */
+@mixin surface($base: t.$color-card-background, $shadow: t.$shadow-glass) {
+  background: t.$paper-sheen-gradient, $base;
+
+  border: t.$card-border;
+  outline: t.$glass-border;
+  outline-offset: -1px;
+
+  border-radius: t.$radius-card;
+  padding: t.$card-padding;
+  box-shadow: $shadow;
+
+  backdrop-filter: blur(8px);
+}
+
+/* Card = surface principale */
+@mixin card($base: t.$color-card-background, $shadow: t.$shadow-glass) {
+  @include surface($base, $shadow);
+}
+
+/* Panel = surface plus légère */
+@mixin panel($base: t.$color-surface, $shadow: t.$shadow-sm) {
+  @include surface($base, $shadow);
+}
+
+/* Hover lift générique (cards, liens, etc.) */
+@mixin lift($y: -2px, $shadow-hover: t.$shadow-lg) {
+  transition:
+    transform t.$duration-fast t.$ease-standard,
+    box-shadow t.$duration-fast t.$ease-standard,
+    border-color t.$duration-medium t.$ease-standard;
+
+  @include hover {
+    &:hover {
+      transform: translateY($y);
+      border-color: t.$color-border;
+      box-shadow: $shadow-hover;
+    }
+  }
+
+  @include reduce-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@mixin liftCardProcess($y: -2px, $shadow-hover: t.$shadow-lg) {
+  transition:
+    transform t.$duration-slow t.$ease-standard,
+    box-shadow t.$duration-slow t.$ease-standard,
+    border-color t.$duration-medium t.$ease-standard;
+
+  @include hover {
+    &:hover {
+      transform: translateY($y);
+    }
+  }
+
+  @include reduce-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* ----------------------------
+   Buttons (génériques)
+   ---------------------------- */
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  font-family: t.$font-family-text;
+  font-weight: t.$font-weight-button;
+  font-size: t.$font-size-button;
+
+  padding: t.$button-padding-y t.$button-padding-x;
+  border-radius: t.$radius-button;
+  border: 1px solid transparent;
+
+  transition:
+    transform t.$duration-fast t.$ease-standard,
+    background t.$duration-medium t.$ease-standard,
+    border-color t.$duration-medium t.$ease-standard,
+    box-shadow t.$duration-medium t.$ease-standard;
+
+  @include hover {
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  @include focus(2px);
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: t.$button-primary;
+  color: t.$button-text;
+
+  @include hover {
+    &:hover {
+      background: t.$color-primary-hover;
+    }
+  }
+}
+
+@mixin btn-ghost {
+  @include btn-base;
+  background: t.$input-background;
+  color: t.$color-text-primary;
+  border-color: t.$color-border;
+
+  @include hover {
+    &:hover {
+      background: t.$color-surface-hover;
+    }
+  }
+}
+
+/* ----------------------------
+   Links (générique)
+   ---------------------------- */
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Link texte accessible (optionnel) */
+@mixin link-text {
+  color: t.$color-link;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+
+  @include hover {
+    &:hover {
+      color: t.$color-link-hover;
+    }
+  }
+
+  @include focus(2px);
+}

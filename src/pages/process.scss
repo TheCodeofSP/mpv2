@@ -1,0 +1,420 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.process {
+  width: 100%;
+}
+
+.process__content {
+  @include m.content;
+}
+
+/* HERO */
+.process__hero {
+  text-align: center;
+  display: grid;
+  gap: t.$space-xs;
+}
+
+.process__kicker {
+  margin: 0;
+  opacity: 0.9;
+  font-family: t.$font-family-heading;
+  color: t.$color-text-secondary;
+}
+
+.process__title {
+  @include m.title-h1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.process__lead {
+  @include m.text-lead;
+  max-width: t.$measure-text;
+  margin-inline: auto;
+}
+
+/* Buttons */
+.process__btn {
+  @include m.link-reset;
+}
+.process__btn--primary {
+  @include m.btn-primary;
+}
+.process__btn--ghost {
+  @include m.btn-ghost;
+}
+
+/* Sections */
+.process__section {
+  @include m.section(t.$space-s);
+}
+
+.process__h2 {
+  @include m.title-h2;
+  font-size: clamp(22px, 2.2vw, 28px);
+}
+
+.process__h3 {
+  @include m.title-h3;
+  margin-bottom: 0;
+}
+
+.process__h3back {
+  @include m.text-body;
+  margin-bottom: 0;
+  color: t.$color-text-secondary;
+}
+
+.process__p {
+  @include m.text-body;
+}
+
+.process__p--muted {
+  @include m.text-muted;
+}
+
+/* =========================
+   TIMELINE
+   ========================= */
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: t.$space-l;
+  padding: t.$space-s 0;
+}
+
+.timeline__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: t.$color-border;
+  border-radius: t.$radius-pill;
+
+  @include m.up(t.$bp-tablet) {
+    left: 18px;
+    transform: none;
+  }
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: start;
+
+  /* la perspective doit être sur un parent stable */
+  perspective: 1200px;
+
+  @include m.up(t.$bp-tablet) {
+    grid-template-columns: 48px 1fr;
+  }
+}
+
+/* ✅ FIX IMPORTANT
+   Ton observer ajoute .is-visible “à la main”.
+   Au clic, React re-render => il réécrit className et peut faire sauter .is-visible.
+   Si l’élément a .reveal mais perd .is-visible => opacity:0 => “disparition”.
+
+   On neutralise donc .reveal uniquement ici (timeline), pour éviter ce bug.
+   L’apparition progressive reste gérée par tes autres reveals (titres/sections),
+   et tu peux aussi ajouter des reveals sur des wrappers non re-rendus si tu veux.
+*/
+.timeline__item.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.timeline__dot {
+  grid-column: 2;
+  justify-self: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: t.$radius-pill;
+
+  display: grid;
+  place-items: center;
+
+  background: t.$color-primary;
+  color: t.$color-card-background;
+  font-weight: 800;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: t.$shadow-sm;
+
+  @include m.up(t.$bp-tablet) {
+    grid-column: 1;
+    justify-self: start;
+  }
+}
+
+/* =========================
+   FLIP CARD (vraie carte)
+   ========================= */
+
+.timeline__card {
+  /* bouton reset */
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+
+  width: 100%;
+  padding: 0; /* padding dans les faces */
+  border-radius: t.$radius-card;
+
+  /* IMPORTANT : pas de background ici, il est sur les faces */
+  background: transparent;
+
+  position: relative;
+  overflow: hidden;
+
+  /* interaction */
+  @include m.liftCardProcess(-2px, t.$shadow-md);
+  @include m.focus(2px);
+
+  /* évite un “glitch” sur certains navigateurs */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.timeline__cardInner {
+  position: relative;
+  width: 100%;
+  min-height: 190px;
+
+  transform-style: preserve-3d;
+  transition: transform t.$duration-slow t.$ease-in-out;
+
+  /* perf */
+  will-change: transform;
+
+  @media (min-width: t.$bp-mobile) {
+    min-height: 100px;
+  }
+}
+
+.timeline__face {
+  position: absolute;
+  inset: 0;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  padding: t.$space-xs;
+  display: grid;
+
+  background: t.$paper-sheen-gradient, t.$color-card-background;
+}
+
+.timeline__face--front {
+  transform: rotateY(0deg);
+}
+
+.timeline__face--back {
+  transform: rotateY(180deg);
+  background: t.$paper-sheen-gradient, t.$color-surface;
+}
+
+/* Flip via state (mobile / click) */
+.timeline__item.is-flipped .timeline__cardInner {
+  transform: rotateY(180deg);
+}
+
+/* Desktop : flip au hover/focus */
+@media (hover: hover) and (pointer: fine) {
+  .timeline__card:hover .timeline__cardInner,
+  .timeline__card:focus-visible .timeline__cardInner {
+    transform: rotateY(180deg);
+    box-shadow: none;
+  }
+}
+
+/* ✅ Alternance gauche/droite en MOBILE */
+.timeline__card {
+  grid-column: 1; /* valeur par défaut */
+}
+.timeline__item.is-left .timeline__card {
+  grid-column: 1;
+  justify-self: end;
+}
+.timeline__item.is-right .timeline__card {
+  grid-column: 3;
+  justify-self: start;
+}
+
+/* En TABLET/DESKTOP : tout sur la colonne contenu (à droite de la ligne) */
+@include m.up(t.$bp-tablet) {
+  .timeline__card {
+    grid-column: 2 !important;
+    justify-self: stretch !important;
+  }
+}
+
+/* Hint */
+.timeline__hint {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px;
+  border-radius: t.$radius-pill;
+
+  background: t.$paper-sheen-gradient, t.$color-surface;
+  border: 1px solid t.$color-border-secondary;
+  box-shadow: t.$shadow-sm;
+
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: t.$color-text-secondary;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: t.$bp-mobile) {
+    span {
+      display: none;
+    }
+  }
+}
+
+/* Micro indice mobile */
+.timeline__tapHint {
+  display: none;
+  font-weight: 700;
+  opacity: 0.85;
+  color: t.$color-link;
+  text-underline-offset: 3px;
+  justify-self: start;
+}
+
+@media (max-width: t.$bp-mobile) {
+  .timeline__tapHint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+/* Reduced motion : pas de 3D, swap simple */
+@media (prefers-reduced-motion: reduce) {
+  .timeline__cardInner {
+    transition: none !important;
+    transform: none !important;
+    min-height: auto;
+  }
+
+  .timeline__face {
+    position: static;
+    transform: none !important;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    padding-top: 22px;
+  }
+
+  .timeline__face--back {
+    display: none;
+  }
+
+  .timeline__item.is-flipped .timeline__face--front {
+    display: none;
+  }
+
+  .timeline__item.is-flipped .timeline__face--back {
+    display: grid;
+  }
+}
+
+/* =========================
+   PRINCIPLES
+   ========================= */
+
+.principles {
+  @include m.grid(1, t.$space-m);
+
+  @include m.up(t.$bp-mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.principleCard {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  display: grid;
+  gap: t.$space-xs;
+  align-items: start;
+
+  @include m.liftCardProcess(-2px, t.$shadow-md);
+}
+
+.principleCard__icon {
+  margin: auto;
+  border-radius: 14px;
+  padding: t.$space-xs;
+
+  display: grid;
+  place-items: center;
+
+  background: t.$input-background;
+  border: 1px solid t.$color-border;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: t.$color-text-primary;
+    opacity: 0.9;
+  }
+}
+
+.principleCard__text {
+  text-align: center;
+  @include m.text-body;
+}
+
+/* Footer CTA */
+.process__footerCta {
+  margin-top: t.$space-s;
+}
+
+.process__footerCard {
+  @include m.card(t.$color-card-background, t.$shadow-md);
+  text-align: center;
+
+  .process__h2 {
+    text-align: center;
+  }
+}
+
+/* Loading/Error */
+.process__state {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  text-align: center;
+}
+
+/* SR only helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

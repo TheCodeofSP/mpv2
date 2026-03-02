@@ -1,0 +1,194 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.service-area {
+  width: 100%;
+
+  &__card {
+    @include m.panel(t.$color-surface, t.$shadow-sm);
+    text-align: center;
+  }
+
+  &__head {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: t.$radius-button;
+
+    display: grid;
+    place-items: center;
+
+    background: t.$input-background;
+    border: 1px solid t.$color-border;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.9;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: t.$font-family-heading;
+    font-weight: t.$font-weight-heading;
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    color: t.$color-title;
+  }
+
+  &__text {
+    margin: 0;
+    color: t.$color-text-secondary;
+    line-height: t.$line-height-text;
+
+    /* lisibilité premium */
+    margin-inline: auto;
+  }
+
+  /* Chips */
+  &__chips {
+    list-style: none;
+    padding: 0;
+    margin: t.$space-s 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: t.$space-xs;
+    justify-content: center;
+  }
+
+  &__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 36px;
+    padding: 6px 10px;
+
+    border-radius: t.$radius-pill;
+    border: 1px solid t.$color-border;
+
+    background: t.$input-background;
+    color: t.$color-text-primary;
+
+    font-family: t.$font-family-text;
+    font-weight: t.$font-weight-button;
+    font-size: 0.95rem;
+  }
+
+  &__chipIcon {
+    width: 26px;
+    height: 26px;
+    border-radius: 10px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.9;
+    }
+  }
+
+  &__chipText {
+    line-height: 1.1;
+  }
+
+  /* Map */
+  &__mapWrap {
+    margin-top: t.$space-m;
+  }
+
+  &__map {
+    width: 100%;
+    height: 220px;
+
+    border: 1px solid t.$color-border;
+    border-radius: t.$radius-card;
+    box-shadow: t.$shadow-sm;
+
+    background: t.$color-card-background;
+
+    display: block;
+  }
+
+  &__mapNote {
+    margin: t.$space-xs 0 0;
+    font-size: 0.92rem;
+    color: t.$color-text-secondary;
+  }
+
+  /* Variants */
+  &--compact {
+    .service-area__card {
+      text-align: left;
+      padding: 16px;
+    }
+
+    .service-area__chips {
+      justify-content: flex-start;
+    }
+
+    .service-area__map {
+      height: 200px;
+      border-radius: 16px;
+    }
+
+    .service-area__text {
+      margin-inline: 0;
+    }
+  }
+
+  &--highlight {
+    .service-area__card {
+      background: t.$paper-sheen-gradient, t.$color-card-background;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-area__chips {
+      justify-content: flex-start;
+    }
+
+    .service-area__text {
+      margin-inline: 0;
+    }
+
+    /* petit accent visuel discret */
+    .service-area__card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.18;
+      background: radial-gradient(
+        circle at 20% 10%,
+        t.$color-primary 0%,
+        transparent 55%
+      );
+      pointer-events: none;
+    }
+  }
+}
+
+.service-area__icon {
+  background: transparent;
+  border: transparent;
+  padding: 0;
+  width: 28px;
+      svg {
+      width: 25px;
+      height: 28px;
+      opacity: 0.9;
+    }
+
+}
+

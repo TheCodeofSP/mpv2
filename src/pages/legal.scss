@@ -1,0 +1,89 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.legal {
+  width: 100%;
+}
+
+.legal__content {
+  @include m.content;
+}
+
+/* Header */
+.legal__header {
+  text-align: center;
+  display: grid;
+  gap: t.$space-xs;
+}
+
+.legal__title {
+  @include m.title-h1;
+  text-align: center;
+}
+
+.legal__intro {
+  @include m.text-lead;
+  max-width: t.$measure-text;
+  margin-inline: auto;
+}
+
+/* Cards */
+.legal__card {
+  @include m.card(t.$color-card-background, t.$shadow-sm);
+}
+
+.legal__h2 {
+  @include m.title-h2;
+  margin-bottom: t.$space-s;
+}
+
+.legal__p {
+  @include m.text-body;
+  @include m.text-muted;
+  max-width: t.$measure-text;
+  margin: 0;
+}
+
+/* Definition list (propre + premium) */
+.legal__dl {
+  margin: 0;
+  display: grid;
+  gap: t.$space-xs;
+}
+
+.legal__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: t.$paper-sheen-gradient, t.$color-surface;
+  border: 1px solid t.$color-border-secondary;
+
+  @include m.up(t.$bp-mobile) {
+    grid-template-columns: 180px 1fr;
+    align-items: start;
+    gap: t.$space-s;
+  }
+}
+
+.legal__row dt {
+  font-weight: 700;
+  color: t.$color-title;
+}
+
+.legal__row dd {
+  margin: 0;
+  color: t.$color-text-secondary;
+  line-height: t.$line-height-text;
+
+  /* casse longue si besoin (adresse / siret) */
+  word-break: break-word;
+}
+  
+/* Loading/Error */
+.legal__state {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  text-align: center;
+}

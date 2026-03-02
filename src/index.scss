@@ -1,0 +1,206 @@
+@use "./style/tokens.scss" as t;
+@use "./style/animations.scss";
+
+/* ======================================================
+   BASE / RESET — Mobile-first, chaud, accessible
+   ====================================================== */
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Root */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+
+  /* Header sticky : évite que les ancres passent sous le header */
+  scroll-padding-top: 80px;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scrollbar-gutter: stable;
+}
+
+/* Base */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: t.$color-background;
+  color: t.$color-text-primary;
+
+  font-family: t.$font-family-text;
+  font-weight: t.$font-weight-text;
+  font-size: t.$font-size-text;
+  line-height: t.$line-height-text;
+
+  padding: t.$space-xs;
+}
+
+/* Sélection (détail premium, très léger) */
+::selection {
+  background: rgba(226, 194, 143, 0.35); /* accent doux */
+  color: t.$color-title;
+}
+
+/* Media */
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typographie */
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: t.$color-title;
+
+  /* améliore le rendu des titres quand supporté */
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+strong {
+  color: t.$color-title;
+}
+
+small {
+  color: t.$color-text-secondary;
+}
+
+/* Listes : évite les écarts bizarres selon navigateurs */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+   list-style: none;
+}
+
+/* Liens (important pour UX + premium) */
+a {
+  color: t.$color-link;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+
+  transition: color t.$duration-fast t.$ease-standard;
+
+  &:hover {
+    color: t.$color-link-hover;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+/* Boutons */
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+/* Formulaires (base cohérente et chaude) */
+input,
+textarea,
+select {
+  font: inherit;
+  color: t.$color-text-primary;
+
+  background: t.$input-background;
+  border: t.$input-border;
+  border-radius: t.$radius-input;
+
+  padding: t.$input-padding-y t.$input-padding-x;
+
+  transition:
+    border-color t.$duration-fast t.$ease-standard,
+    box-shadow t.$duration-fast t.$ease-standard;
+
+  &::placeholder {
+    color: t.$placeholder-color;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+/* Textarea spécifique */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* HR (séparateur doux) */
+hr {
+  border: none;
+  height: 1px;
+  background: t.$color-border;
+  margin: t.$space-l 0;
+}
+
+/* Accessibilité motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  z-index: 9999;
+
+  padding: 10px 14px;
+  border-radius: t.$radius-pill;
+
+  background: t.$color-card-background-strong;
+  border: 1px solid t.$color-border;
+  box-shadow: t.$shadow-sm;
+
+  color: t.$color-title;
+  text-decoration: none;
+
+  &:focus-visible {
+    left: 12px;
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}

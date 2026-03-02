@@ -1,0 +1,579 @@
+@use "../style/tokens.scss" as t;
+
+.contact {
+  width: 100%;
+}
+
+.contact__container {
+  max-width: t.$container-max-width;
+  margin: 0 auto;
+  padding: t.$container-padding;
+}
+
+.contact__content {
+  @media (min-width: t.$mobile) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: t.$spacing-xl;
+  }
+}
+
+/* HERO */
+.contact__hero {
+  text-align: center;
+  margin-bottom: t.$spacing-xl;
+}
+
+.contact__kicker {
+  margin: 0 0 t.$spacing-xs 0;
+  opacity: 0.85;
+  font-family: t.$font-family-subtitle;
+}
+
+.contact__title {
+  margin: 0 0 t.$spacing-s 0;
+  font-family: t.$font-family-title;
+  font-weight: t.$font-weight-title;
+  font-size: clamp(40px, 5vw, t.$font-size-title);
+  line-height: t.$line-height-title;
+  color: t.$color-title;
+}
+
+.contact__lead {
+  margin: 0 auto;
+  max-width: 900px;
+  font-family: t.$font-family-lead;
+  font-size: t.$font-size-lead;
+  line-height: t.$line-height-text;
+  color: t.$color-text-secondary;
+}
+
+/* Layout */
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile base */
+  gap: t.$spacing-l;
+  align-items: start;
+}
+
+.contact__side {
+  position: static; /* mobile base */
+}
+
+@media (min-width: t.$tablet) {
+  .contact__layout {
+    grid-template-columns: 360px 1fr;
+  }
+  .contact__side {
+    position: sticky;
+    top: 16px;
+  }
+}
+
+.contact__sideCard {
+  background: t.$color-surface;
+  border: t.$card-border;
+  border-radius: t.$card-border-radius;
+  box-shadow: t.$shadow-sm;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  margin-bottom: t.$spacing-l;
+}
+
+.contact__h2 {
+  margin: 0 0 t.$spacing-s 0;
+  font-family: t.$font-family-subtitle;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: t.$font-weight-subtitle;
+  color: t.$color-title;
+}
+
+/* Methods */
+.contact__methods {
+  display: grid;
+  gap: t.$spacing-s;
+}
+.contact__methodBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: t.$spacing-s;
+}
+
+.contact__method {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+
+  padding: 5px 6px;
+  border-radius: 14px;
+  border: 1px solid t.$color-border-secondary;
+  background: t.$color-card-background;
+  box-shadow: t.$shadow-sm;
+}
+
+.contact__methodIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+
+  background: t.$input-background;
+  border: 1px solid t.$color-border;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: t.$color-text-primary;
+    opacity: 0.9;
+  }
+}
+
+.contact__methodLabel {
+  margin: 0;
+  font-weight: 700;
+}
+
+.contact__methodValue {
+  margin: 0;
+  color: t.$color-text-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.contact__copy {
+  appearance: none;
+  border: 1px solid t.$color-border;
+  background: t.$input-background;
+  color: t.$color-text-primary;
+  border-radius: 12px;
+  padding: 10px 10px;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  transition:
+    transform 160ms ease,
+    background t.$transition-speed ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: t.$color-surface;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.contact__copyText {
+  display: none;
+}
+
+.contact__note {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  color: t.$color-text-secondary;
+  line-height: t.$line-height-text;
+  text-align: left;
+  p {
+    margin: 0;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+/* Card main */
+.contact__card {
+  background: t.$color-card-background;
+  border: t.$card-border;
+  border-radius: t.$card-border-radius;
+  padding: t.$card-padding;
+  box-shadow: t.$shadow-md;
+  backdrop-filter: blur(10px);
+}
+
+/* Reveal animation */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__card--reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+.contact__main {
+  display: flex;
+  flex-direction: column;
+  gap: t.$spacing-l;
+  width: 100%;
+}
+.contact__card--reveal {
+  opacity: 0;
+  animation: riseIn 520ms ease-out forwards;
+}
+
+/* Alerts */
+.contact__alert {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: t.$spacing-s;
+  align-items: start;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid t.$color-border;
+  background: t.$color-surface;
+  margin-bottom: t.$spacing-m;
+}
+
+.contact__alertIcon {
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.contact__alert.is-success {
+  border-color: rgba(111, 133, 122, 0.35);
+}
+
+.contact__alert.is-error {
+  border-color: rgba(168, 95, 87, 0.35);
+}
+
+.contact__alertText {
+  margin: 0;
+  color: t.$color-text-primary;
+  line-height: t.$line-height-text;
+}
+
+/* Form */
+.contact__form {
+  margin-top: t.$spacing-s;
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile base */
+  gap: t.$spacing-m;
+}
+
+@media (min-width: t.$mobile) {
+  .contact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__field--full {
+  grid-column: 1 / -1;
+}
+
+.contact__label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.contact__optional {
+  font-weight: 600;
+  opacity: 0.7;
+  margin-left: 6px;
+  font-size: 0.95em;
+}
+
+.contact__input,
+.contact__textarea {
+  background: t.$input-background;
+  border: 1px solid t.$color-border;
+  border-radius: t.$input-border-radius;
+  padding: t.$input-padding-y t.$input-padding-x;
+  font-family: t.$font-family-text;
+  font-size: t.$font-size-text;
+  color: t.$color-text-primary;
+
+  &::placeholder {
+    color: t.$placeholder-color;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+
+  &.has-error {
+    border-color: rgba(168, 95, 87, 0.55);
+  }
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact__error {
+  margin: 8px 0 0 0;
+  color: t.$color-danger;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.contact__consent {
+  gap: 10px;
+  line-height: t.$line-height-text;
+  text-align: left;
+
+  input {
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &.has-error {
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(168, 95, 87, 0.35);
+    background: rgba(168, 95, 87, 0.08);
+  }
+}
+
+/* Actions */
+.contact__actions {
+  margin-top: t.$spacing-m;
+  display: flex;
+  align-items: center;
+  gap: t.$spacing-m;
+  flex-wrap: wrap;
+}
+
+.contact__btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: t.$button-border-radius;
+  padding: t.$button-padding-y t.$button-padding-x;
+  background: t.$button-primary;
+  color: t.$button-text;
+  font-family: t.$font-family-button;
+  font-weight: t.$font-weight-button;
+  font-size: t.$font-size-button;
+  cursor: pointer;
+
+  transition:
+    transform 160ms ease,
+    background t.$transition-speed ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: t.$color-primary-hover;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+.contact__alt {
+  color: t.$color-link;
+  text-decoration: none;
+  font-weight: 700;
+
+  &:hover {
+    text-decoration: underline;
+    color: t.$color-link-hover;
+  }
+}
+
+.contact__select {
+  width: 100%;
+  background: t.$input-background;
+  border: 1px solid t.$color-border;
+  border-radius: t.$input-border-radius;
+  padding: t.$input-padding-y t.$input-padding-x;
+  font-family: t.$font-family-text;
+  font-size: t.$font-size-text;
+  color: t.$color-text-primary;
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+
+  &.has-error {
+    border-color: rgba(168, 95, 87, 0.55);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.contact__field.is-hidden {
+  display: none;
+}
+
+.contact__hint {
+  margin: 10px 0 0 0;
+  font-size: 0.95rem;
+  color: t.$color-text-secondary;
+  line-height: t.$line-height-text;
+}
+
+/* =========================
+   Toast (popup) success/error
+   ========================= */
+
+.contactToast {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 999;
+
+  display: grid;
+  justify-items: center;
+
+  pointer-events: none; /* évite de bloquer la page quand fermé */
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+
+  @media (min-width: t.$tablet) {
+    left: auto;
+    right: 18px;
+    bottom: 18px;
+    width: 420px;
+    justify-items: end;
+  }
+
+  &.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.contactToast__card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 28px 1fr 28px;
+  gap: 12px;
+  align-items: start;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+
+  background: t.$color-card-background;
+  border: 1px solid t.$color-border;
+  box-shadow: t.$shadow-lg;
+  backdrop-filter: blur(10px);
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+/* Variantes */
+.contactToast.is-success .contactToast__card {
+  border-color: rgba(111, 133, 122, 0.45);
+}
+
+.contactToast.is-error .contactToast__card {
+  border-color: rgba(168, 95, 87, 0.45);
+}
+
+.contactToast__icon {
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.contactToast__body {
+  display: grid;
+  gap: 4px;
+}
+
+.contactToast__title {
+  margin: 0;
+  font-weight: 800;
+  color: t.$color-text-primary;
+}
+
+.contactToast__text {
+  margin: 0;
+  color: t.$color-text-secondary;
+  line-height: t.$line-height-text;
+}
+
+.contactToast__close {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: t.$color-text-secondary;
+  border-radius: 10px;
+  cursor: pointer;
+
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+
+  font-size: 18px;
+  line-height: 1;
+
+  transition: background 160ms ease, transform 160ms ease;
+
+  &:hover {
+    background: t.$input-background;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}

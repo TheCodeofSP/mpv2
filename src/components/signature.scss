@@ -1,0 +1,52 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.signature {
+  margin: 0;
+
+  font-family: t.$font-family-text;
+  font-size: 1.02rem;
+  line-height: t.$line-height-text;
+
+  color: t.$color-text-secondary;
+
+  font-style: italic;
+
+  margin-inline: auto;
+
+  /* Alignements */
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+    margin-inline: 0;
+  }
+
+  /* Variants */
+  &--default {
+    opacity: 0.95;
+  }
+
+  &--subtle {
+    font-size: 0.98rem;
+    opacity: 0.8;
+  }
+
+  &--emphasis {
+    display: inline-block;
+
+    padding: 10px 16px;
+
+    border-radius: t.$radius-pill;
+    border: 1px solid t.$color-border;
+
+    background: t.$paper-sheen-gradient, t.$color-card-background;
+
+    box-shadow: t.$shadow-sm;
+
+    font-style: italic;
+    color: t.$color-text-primary;
+  }
+}

@@ -1,0 +1,1491 @@
+{
+  "signature": {
+    "main": {
+      "visitor": "Un accompagnement humain, structuré, et pensé pour vous.",
+      "accompagne": "Un accompagnement humain, structuré, et pensé pour toi.",
+      "accompagnant": "Un accompagnement humain, structuré, et pensé pour vous.",
+      "partenaire_social": "Un accompagnement humain, structuré, et pensé pour vous."
+    },
+    "emotional": {
+      "visitor": "Avancer ensemble, avec des repères clairs et adaptés à votre réalité.",
+      "accompagne": "Avancer ensemble, avec des repères clairs et adaptés à ta réalité.",
+      "accompagnant": "Avancer ensemble, avec des repères clairs et adaptés à votre réalité.",
+      "partenaire_social": "Avancer ensemble, avec des repères clairs et adaptés à votre réalité."
+    }
+  },
+  "site": {
+    "name": "Manon Pontasse – Éducatrice spécialisée indépendante",
+    "sameAs": []
+  },
+  "meta": {
+    "locale": "fr",
+    "brand": {
+      "name": "Éducatrice spécialisée",
+      "tagline": "Déficience intellectuelle, avec ou sans trouble associé"
+    },
+    "personalization": {
+      "profiles": [
+        "visitor",
+        "accompagne",
+        "accompagnant",
+        "partenaire_social"
+      ],
+      "addressing": {
+        "visitor": "vous",
+        "accompagne": "tu",
+        "accompagnant": "vous",
+        "partenaire_social": "vous"
+      }
+    }
+  },
+  "nav": {
+    "links": [
+      {
+        "key": "home",
+        "to": "/",
+        "label": {
+          "visitor": "Accueil",
+          "accompagne": "Accueil",
+          "accompagnant": "Accueil",
+          "partenaire_social": "Accueil"
+        }
+      },
+      {
+        "key": "informations",
+        "to": "/informations",
+        "label": {
+          "visitor": "Informations",
+          "accompagne": "Informations",
+          "accompagnant": "Informations",
+          "partenaire_social": "Informations"
+        },
+        "children": [
+          {
+            "key": "overview",
+            "to": "/informations",
+            "label": {
+              "visitor": "Vue d’ensemble",
+              "accompagne": "Vue d’ensemble",
+              "accompagnant": "Vue d’ensemble",
+              "partenaire_social": "Vue d’ensemble"
+            }
+          },
+          {
+            "key": "di",
+            "to": "/informations#deficience-intellectuelle",
+            "label": {
+              "visitor": "Déficience intellectuelle",
+              "accompagne": "Déficience intellectuelle",
+              "accompagnant": "Déficience intellectuelle",
+              "partenaire_social": "Déficience intellectuelle"
+            }
+          },
+          {
+            "key": "ta",
+            "to": "/informations#troubles-associes",
+            "label": {
+              "visitor": "Troubles associés",
+              "accompagne": "Troubles associés",
+              "accompagnant": "Troubles associés",
+              "partenaire_social": "Troubles associés"
+            }
+          },
+          {
+            "key": "faq",
+            "to": "/informations#faq",
+            "label": {
+              "visitor": "FAQ",
+              "accompagne": "FAQ",
+              "accompagnant": "FAQ",
+              "partenaire_social": "FAQ"
+            }
+          }
+        ]
+      },
+      {
+        "key": "process",
+        "to": "/process",
+        "label": {
+          "visitor": "Mon approche",
+          "accompagne": "Mon approche",
+          "accompagnant": "Mon approche",
+          "partenaire_social": "Mon approche"
+        }
+      },
+      {
+        "key": "about",
+        "to": "/about",
+        "label": {
+          "visitor": "Me connaître",
+          "accompagne": "Me connaître",
+          "accompagnant": "Me connaître",
+          "partenaire_social": "Me connaître"
+        }
+      },
+      {
+        "key": "contact",
+        "to": "/contact",
+        "label": {
+          "visitor": "Contact",
+          "accompagne": "Contact",
+          "accompagnant": "Contact",
+          "partenaire_social": "Contact"
+        }
+      }
+    ]
+  },
+  "home": {
+    "serviceArea": {
+      "title": {
+        "visitor": "Zone d’intervention",
+        "accompagne": "Zone d’intervention",
+        "accompagnant": "Zone d’intervention",
+        "partenaire_social": "Zone d’intervention"
+      },
+      "text": {
+        "visitor": "Strasbourg et Eurométropole.",
+        "accompagne": "Strasbourg et Eurométropole.",
+        "accompagnant": "Strasbourg et Eurométropole.",
+        "partenaire_social": "Strasbourg et Eurométropole."
+      },
+      "modalities": {
+        "visitor": ["À domicile", "En structure", "En visio"],
+        "accompagne": ["À domicile", "En structure", "En visio"],
+        "accompagnant": ["À domicile", "En structure", "En visio"],
+        "partenaire_social": ["À domicile", "En structure", "En visio"]
+      }
+    },
+    "intro": {
+      "title": {
+        "visitor": "Manon, Éducatrice spécialisée indépendante",
+        "accompagne": "Manon, Éducatrice spécialisée indépendante",
+        "accompagnant": "Manon, Éducatrice spécialisée indépendante",
+        "partenaire_social": "Manon, Éducatrice spécialisée indépendante"
+      },
+      "subtitle": {
+        "visitor": "Pour les enfants, adolescents et adultes ayant une déficience intellectuelle, avec ou sans troubles associés; j'assure un suivi structuré, bienveillant et adapté au rythme de chaque personne, en lien avec la famille et les partenaires.",
+        "accompagne": "Pour les enfants, adolescents et adultes ayant une déficience intellectuelle, avec ou sans troubles associés; j'assure un suivi structuré, bienveillant et adapté au rythme de chaque personne, en lien avec la famille et les partenaires.",
+        "accompagnant": "Pour les enfants, adolescents et adultes ayant une déficience intellectuelle, avec ou sans troubles associés; j'assure un suivi structuré, bienveillant et adapté au rythme de chaque personne, en lien avec la famille et les partenaires.",
+        "partenaire_social": "Pour les enfants, adolescents et adultes ayant une déficience intellectuelle, avec ou sans troubles associés; j'assure un suivi structuré, bienveillant et adapté au rythme de chaque personne, en lien avec la famille et les partenaires."
+      }
+    },
+    "content": {
+      "highlights": [
+        "Évaluation des besoins et du fonctionnement au quotidien",
+        "Objectifs concrets et mesurables",
+        "Soutien à l’autonomie et aux habiletés sociales",
+        "Coordination avec les acteurs de l’accompagnement"
+      ],
+      "paragraphs": [
+        "Chaque accompagnement commence par une écoute attentive et une compréhension fine de la situation.",
+        "Nous co-construisons un plan d’intervention clair, avec des objectifs réalistes et une progression visible."
+      ]
+    },
+    "cta": {
+      "primary": {
+        "label": {
+          "visitor": "Prendre un premier contact",
+          "accompagne": "Prendre un premier contact",
+          "accompagnant": "Prendre un premier contact",
+          "partenaire_social": "Prendre un premier contact"
+        },
+        "href": "/contact"
+      },
+      "secondary": {
+        "label": {
+          "visitor": "Comprendre ma façon d’accompagner",
+          "accompagne": "Voir comment on va avancer",
+          "accompagnant": "Comprendre ma façon d’accompagner",
+          "partenaire_social": "Découvrir le cadre d’intervention"
+        },
+        "href": "/process"
+      }
+    },
+    "seo": {
+      "title": "Manon Pontasse - Éducatrice spécialisée à Strasbourg",
+      "description": "Éducatrice spécialisée indépendante à Strasbourg et Eurométropole. Accompagnement éducatif en déficience intellectuelle (avec ou sans troubles associés), à domicile, en structure ou en visio."
+    },
+    "profileSelector": {
+      "label": {
+        "visitor": "Vous êtes :",
+        "accompagne": "Tu es :",
+        "accompagnant": "Vous êtes :",
+        "partenaire_social": "Vous êtes :"
+      },
+      "options": [
+        {
+          "key": "visitor",
+          "label": "Un(e) Visiteur(trice)"
+        },
+        {
+          "key": "accompagne",
+          "label": "Un(e) accompagné(e)"
+        },
+        {
+          "key": "accompagnant",
+          "label": "Un(e) accompagnant(e)"
+        },
+        {
+          "key": "partenaire_social",
+          "label": "Un(e) partenaire social(e)"
+        }
+      ]
+    },
+    "introsByProfile": {
+      "accompagne": {
+        "title": "Tu n’es pas seul(e) dans ton parcours",
+        "lead": "Je suis là pour t’accompagner, à ton rythme, dans ton quotidien.",
+        "text": "Ensemble, nous travaillerons sur ce qui est important pour toi : mieux comprendre ton environnement, développer ton autonomie, renforcer ta confiance et trouver des solutions concrètes à tes difficultés. Chaque pas compte, et je suis là pour avancer avec toi, simplement."
+      },
+      "accompagnant": {
+        "title": "Vous accompagnez un proche ? Vous n’êtes pas seul(e)",
+        "lead": "J’accompagne votre enfant ou votre proche avec bienveillance et structure.",
+        "text": "Mon objectif est de soutenir son développement, son autonomie et son épanouissement au quotidien, tout en vous apportant des outils concrets et adaptés à votre réalité. Nous avançons ensemble, dans une relation de confiance et d'échanges, pour construire un accompagnement et des outils viables."
+      },
+      "partenaire_social": {
+        "title": "Un accompagnement spécialisé, en lien avec vos équipes et vos structures",
+        "lead": "Je travaille en complément des dispositifs existants, dans une logique de continuité et de coordination.",
+        "text": "J’interviens auprès de personnes présentant une déficience intellectuelle, avec ou sans troubles associés, dans une logique de coopération et de cohérence des accompagnements. L’objectif est de soutenir les projets individualisés, de favoriser l’autonomie et d'assurer une continuité des pratiques entre les différents acteurs."
+      },
+      "visitor": {
+        "title": "Un accompagnement adapté à chaque personne",
+        "lead": "Chaque situation est unique. Je vous propose un accompagnement structuré, humain et adapté à vos besoins.",
+        "text": "Selon votre situation (accompagné, parent/proche ou partenaire), le site ajuste ses contenus et sa façon de s’adresser à vous. Vous pourrez changer à tout moment pendant votre visite."
+      }
+    }
+  },
+  "services": {
+    "intro": {
+      "title": {
+        "visitor": "Accompagnements proposés",
+        "accompagne": "Accompagnements proposés",
+        "accompagnant": "Accompagnements proposés",
+        "partenaire_social": "Accompagnements proposés"
+      },
+      "subtitle": {
+        "visitor": "Des interventions adaptées à vos objectifs",
+        "accompagne": "Des interventions adaptées à tes objectifs",
+        "accompagnant": "Des interventions adaptées à vos objectifs",
+        "partenaire_social": "Des interventions adaptées à vos objectifs"
+      },
+      "lead": {
+        "visitor": "Chaque accompagnement est personnalisé : évaluation, objectifs, outils, suivi.",
+        "accompagne": "Chaque accompagnement est personnalisé : évaluation, objectifs, outils, suivi.",
+        "accompagnant": "Chaque accompagnement est personnalisé : évaluation, objectifs, outils, suivi.",
+        "partenaire_social": "Chaque accompagnement est personnalisé : évaluation, objectifs, outils, suivi."
+      }
+    },
+    "forWho": {
+      "title": {
+        "visitor": "Pour qui ?",
+        "accompagne": "Pour qui ?",
+        "accompagnant": "Pour qui ?",
+        "partenaire_social": "Pour qui ?"
+      },
+      "items": [
+        "Enfants et adolescents en situation de handicap intellectuel",
+        "Avec ou sans troubles associés (TSA, TDAH, troubles DYS…)",
+        "Jeunes en rupture de parcours",
+        "Jeunes en attente de place en structure spécialisée"
+      ]
+    },
+    "framework": {
+      "title": {
+        "visitor": "Comment se déroulent les accompagnements ?",
+        "accompagne": "Comment se déroulent les accompagnements ?",
+        "accompagnant": "Comment se déroulent les accompagnements ?",
+        "partenaire_social": "Comment se déroulent les accompagnements ?"
+      },
+      "items": [
+        "Interventions à domicile et dans les différents lieux de vie",
+        "Accompagnement individualisé selon les besoins",
+        "Développement et maintien des compétences",
+        "Soutien à l’autonomie et à la communication",
+        "Favoriser l’inclusion sociale (sport, loisirs, sorties)",
+        "Travail en partenariat avec les professionnels",
+        "Soutien aux familles et droit au répit"
+      ]
+    },
+    "process": {
+      "title": {
+        "visitor": "Le processus d’accompagnement",
+        "accompagne": "Le processus d’accompagnement",
+        "accompagnant": "Le processus d’accompagnement",
+        "partenaire_social": "Le processus d’accompagnement"
+      },
+      "items": [
+        {
+          "title": {
+            "visitor": "Évaluation et bilan des besoins",
+            "accompagne": "Évaluation et bilan des besoins",
+            "accompagnant": "Évaluation et bilan des besoins",
+            "partenaire_social": "Évaluation et bilan des besoins"
+          },
+          "description": {
+            "visitor": "Analyse du quotidien, des compétences et des difficultés afin de définir des objectifs réalistes.",
+            "accompagne": "Analyse du quotidien, des compétences et des difficultés afin de définir des objectifs réalistes.",
+            "accompagnant": "Analyse du quotidien, des compétences et des difficultés afin de définir des objectifs réalistes.",
+            "partenaire_social": "Analyse du quotidien, des compétences et des difficultés afin de définir des objectifs réalistes."
+          },
+          "details": [
+            "Entretien initial",
+            "Observation",
+            "Synthèse et plan d’intervention"
+          ]
+        },
+        {
+          "title": {
+            "visitor": "Autonomie au quotidien",
+            "accompagne": "Autonomie au quotidien",
+            "accompagnant": "Autonomie au quotidien",
+            "partenaire_social": "Autonomie au quotidien"
+          },
+          "description": {
+            "visitor": "Routines, organisation, gestion du temps, tâches de la vie quotidienne.",
+            "accompagne": "Routines, organisation, gestion du temps, tâches de la vie quotidienne.",
+            "accompagnant": "Routines, organisation, gestion du temps, tâches de la vie quotidienne.",
+            "partenaire_social": "Routines, organisation, gestion du temps, tâches de la vie quotidienne."
+          },
+          "details": [
+            "Méthodes visuelles",
+            "Structuration",
+            "Généralisation des acquis"
+          ]
+        },
+        {
+          "title": {
+            "visitor": "Habiletés sociales et communication",
+            "accompagne": "Habiletés sociales et communication",
+            "accompagnant": "Habiletés sociales et communication",
+            "partenaire_social": "Habiletés sociales et communication"
+          },
+          "description": {
+            "visitor": "Comprendre les règles sociales, s’exprimer, gérer les interactions.",
+            "accompagne": "Comprendre les règles sociales, s’exprimer, gérer les interactions.",
+            "accompagnant": "Comprendre les règles sociales, s’exprimer, gérer les interactions.",
+            "partenaire_social": "Comprendre les règles sociales, s’exprimer, gérer les interactions."
+          },
+          "details": [
+            "Jeux de rôle",
+            "Scénarios sociaux",
+            "Outils de communication"
+          ]
+        },
+        {
+          "title": {
+            "visitor": "Gestion des comportements / régulation",
+            "accompagne": "Gestion des comportements / régulation",
+            "accompagnant": "Gestion des comportements / régulation",
+            "partenaire_social": "Gestion des comportements / régulation"
+          },
+          "description": {
+            "visitor": "Comprendre les facteurs déclencheurs, développer des stratégies de régulation.",
+            "accompagne": "Comprendre les facteurs déclencheurs, développer des stratégies de régulation.",
+            "accompagnant": "Comprendre les facteurs déclencheurs, développer des stratégies de régulation.",
+            "partenaire_social": "Comprendre les facteurs déclencheurs, développer des stratégies de régulation."
+          },
+          "details": [
+            "Analyse fonctionnelle (selon contexte)",
+            "Stratégies de prévention",
+            "Outils de retour au calme"
+          ]
+        },
+        {
+          "title": {
+            "visitor": "Soutien aux familles et aidants",
+            "accompagne": "Soutien aux familles et aidants",
+            "accompagnant": "Soutien aux familles et aidants",
+            "partenaire_social": "Soutien aux familles et aidants"
+          },
+          "description": {
+            "visitor": "Conseils, outils et ajustements pour faciliter le quotidien et renforcer la cohérence.",
+            "accompagne": "Conseils, outils et ajustements pour faciliter le quotidien et renforcer la cohérence.",
+            "accompagnant": "Conseils, outils et ajustements pour faciliter le quotidien et renforcer la cohérence.",
+            "partenaire_social": "Conseils, outils et ajustements pour faciliter le quotidien et renforcer la cohérence."
+          },
+          "details": [
+            "Guidance parentale / aidants",
+            "Outils à la maison",
+            "Suivi et ajustements"
+          ]
+        }
+      ]
+    },
+    "pricing": {
+      "title": {
+        "visitor": "Tarifs",
+        "accompagne": "Tarifs",
+        "accompagnant": "Tarifs",
+        "partenaire_social": "Tarifs"
+      },
+      "text": {
+        "visitor": "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter.",
+        "accompagne": "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter.",
+        "accompagnant": "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter.",
+        "partenaire_social": "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter."
+      }
+    },
+    "notes": [
+      "Les modalités (à domicile, en structure, visio) sont à définir selon les besoins et le contexte.",
+      "Les troubles associés peuvent inclure des difficultés de communication, TSA, TDAH, troubles anxieux, etc."
+    ],
+    "cta": {
+      "primary": {
+        "label": {
+          "visitor": "Me contacter",
+          "accompagne": "Me contacter",
+          "accompagnant": "Me contacter",
+          "partenaire_social": "Me contacter"
+        },
+        "href": "/contact"
+      }
+    },
+    "seo": {
+      "title": "Manon Pontasse - Accompagnement",
+      "description": "Évaluation, autonomie, habiletés sociales, régulation, soutien aux familles. Interventions personnalisées."
+    }
+  },
+  "process": {
+    "intro": {
+      "title": {
+        "visitor": "Mon approche",
+        "accompagne": "Mon approche",
+        "accompagnant": "Mon approche",
+        "partenaire_social": "Mon approche"
+      },
+      "subtitle": {
+        "visitor": "Comment se passe l’accompagnement ?",
+        "accompagne": "Comment on va travailler ensemble ?",
+        "accompagnant": "Comment je vais accompagner votre enfant / proche ?",
+        "partenaire_social": "Modalités d’intervention"
+      },
+      "lead": {
+        "visitor": "Chaque accompagnement est adapté à la personne. Voici les grandes étapes pour vous donner des repères.",
+        "accompagne": "Je t’explique simplement comment ça se passe, étape par étape.",
+        "accompagnant": "Je vous explique concrètement comment se déroule l’accompagnement.",
+        "partenaire_social": "Un cadre structuré pour garantir cohérence et efficacité des interventions."
+      }
+    },
+
+    "content": {
+      "steps": [
+        {
+          "title": {
+            "visitor": "Premier échange",
+            "accompagne": "Premier échange",
+            "accompagnant": "Premier échange",
+            "partenaire_social": "Premier échange"
+          },
+          "front": {
+            "summary": {
+              "visitor": "Comprendre la demande, le contexte et les priorités.",
+              "accompagne": "Comprendre ta demande, ton contexte et tes priorités.",
+              "accompagnant": "Comprendre la demande, le contexte et les priorités.",
+              "partenaire_social": "Clarifier la demande, le cadre et les objectifs généraux."
+            }
+          },
+          "back": {
+            "text": {
+              "visitor": "Un premier temps d’échange pour comprendre ce qui vous amène, ce qui est important pour vous, et ce que vous attendez. On vérifie ensemble si mon accompagnement correspond à votre situation.",
+              "accompagne": "On prend un moment pour que tu me racontes ce qui est difficile pour toi en ce moment, et ce que tu aimerais améliorer. L’idée : que tu te sentes écouté(e) et compris(e).",
+              "accompagnant": "Un premier échange pour comprendre votre demande, vos préoccupations et le contexte. On définit ce qui est prioritaire et ce qui vous aiderait le plus au quotidien.",
+              "partenaire_social": "Temps de cadrage : recueil d’informations, clarification de la demande, articulation avec l’équipe/le projet, et repérage des priorités d’intervention."
+            },
+            "examples": {
+              "visitor": [
+                "Difficultés d’autonomie (repas, hygiène, déplacements).",
+                "Tensions relationnelles ou isolement.",
+                "Anxiété, crises, difficultés de régulation."
+              ],
+              "accompagne": [
+                "Tu te sens vite dépassé(e) ou stressé(e).",
+                "Tu as du mal avec certaines routines (matin, repas, sorties).",
+                "Tu veux mieux t’entendre avec les autres / te sentir plus à l’aise."
+              ],
+              "accompagnant": [
+                "Routines compliquées (habillage, repas, devoirs).",
+                "Difficultés avec les émotions (colères, crises, angoisses).",
+                "Besoin d’outils concrets pour le quotidien."
+              ],
+              "partenaire_social": [
+                "Besoin de structuration des routines et des repères.",
+                "Ajustements éducatifs et communication adaptés.",
+                "Coordination avec les partenaires / transmission d’outils."
+              ]
+            }
+          }
+        },
+
+        {
+          "title": {
+            "visitor": "Évaluation",
+            "accompagne": "Évaluation",
+            "accompagnant": "Évaluation",
+            "partenaire_social": "Évaluation"
+          },
+          "front": {
+            "summary": {
+              "visitor": "Observer, recueillir les informations, identifier forces et besoins.",
+              "accompagne": "Comprendre ce qui t’aide, ce qui te bloque, et ce que tu sais déjà faire.",
+              "accompagnant": "Observer et comprendre : forces, besoins, déclencheurs, ressources.",
+              "partenaire_social": "Analyse fonctionnelle et repérage des leviers d’intervention."
+            }
+          },
+          "back": {
+            "text": {
+              "visitor": "Selon la situation, j’observe et je recueille des informations pour comprendre les besoins réels : ce qui fonctionne, ce qui bloque, dans quels contextes, et avec quels déclencheurs.",
+              "accompagne": "On va repérer ensemble ce qui est facile pour toi, ce qui est difficile, et ce qui te stresse. Ça permet de choisir les bons objectifs et les bons outils (sans te mettre en échec).",
+              "accompagnant": "J’analyse les difficultés et les ressources : contexte, déclencheurs, stratégies déjà en place. L’objectif : comprendre pour agir efficacement, sans multiplier les essais inutiles.",
+              "partenaire_social": "Recueil structuré d’informations (contextes, comportements, facteurs déclenchants, capacités, ressources). Objectif : construire une base commune et opérationnelle."
+            },
+            "examples": {
+              "visitor": [
+                "Observation d’une routine (matin, sortie, repas).",
+                "Repérage des déclencheurs d’une crise et des signes avant-coureurs.",
+                "Compréhension des besoins de communication."
+              ],
+              "accompagne": [
+                "Comprendre pourquoi certaines situations te stressent.",
+                "Repérer ce qui t’aide à te calmer.",
+                "Trouver ce qui marche pour mieux t’organiser."
+              ],
+              "accompagnant": [
+                "Analyser une crise (avant / pendant / après) pour mieux prévenir.",
+                "Repérer ce qui aide à coopérer (consignes, rythme, environnement).",
+                "Identifier les compétences déjà présentes à renforcer."
+              ],
+              "partenaire_social": [
+                "Analyse des situations-problèmes et des environnements.",
+                "Repérage des compétences adaptatives et des besoins de compensation.",
+                "Préconisations éducatives et supports adaptés."
+              ]
+            }
+          }
+        },
+
+        {
+          "title": {
+            "visitor": "Objectifs et outils",
+            "accompagne": "Objectifs et outils",
+            "accompagnant": "Objectifs et outils",
+            "partenaire_social": "Objectifs et outils"
+          },
+          "front": {
+            "summary": {
+              "visitor": "Définir des objectifs clairs et mettre en place des outils adaptés.",
+              "accompagne": "Choisir des objectifs simples et des outils qui t’aident vraiment.",
+              "accompagnant": "Fixer des objectifs réalistes + des outils concrets à réutiliser.",
+              "partenaire_social": "Formalisation d’objectifs opérationnels et de supports."
+            }
+          },
+          "back": {
+            "text": {
+              "visitor": "On transforme la demande en objectifs concrets, réalistes et motivants. Puis je propose des outils adaptés au fonctionnement de la personne pour soutenir les apprentissages.",
+              "accompagne": "On choisit des objectifs que tu peux atteindre pas à pas. Et on met en place des outils simples pour t’aider au quotidien (repères, routines, astuces).",
+              "accompagnant": "On construit un plan clair : objectifs priorisés, étapes, supports. L’idée : que vous puissiez aussi utiliser les outils entre les séances.",
+              "partenaire_social": "Définition d’objectifs mesurables, hiérarchisation, supports d’intervention et modalités de généralisation."
+            },
+            "examples": {
+              "visitor": [
+                "“Etre plus autonome” → préparer une collation en 3 étapes.",
+                "“Mieux gérer ses émotions” → apprendre 2 stratégies de retour au calme.",
+                "“Mieux communiquer” → utiliser un support simple (phrases clés/pictos)."
+              ],
+              "accompagne": [
+                "Apprendre une routine avec une check-list simple.",
+                "Utiliser une carte “pause” / “besoin” quand c’est trop.",
+                "S’entraîner à demander de l’aide avec une phrase courte."
+              ],
+              "accompagnant": [
+                "Planning visuel du matin/soir.",
+                "Supports de communication (pictos, mots-clés, scénarios).",
+                "Outils de prévention des crises (signaux, pauses, environnement)."
+              ],
+              "partenaire_social": [
+                "Adaptation de supports (visuels, routines, scénarios sociaux).",
+                "Objectifs d’autonomie et de participation sociale.",
+                "Outils de cohérence éducative (grilles, repères communs)."
+              ]
+            }
+          }
+        },
+
+        {
+          "title": {
+            "visitor": "Mise en pratique",
+            "accompagne": "Mise en pratique",
+            "accompagnant": "Mise en pratique",
+            "partenaire_social": "Mise en pratique"
+          },
+          "front": {
+            "summary": {
+              "visitor": "Travailler les compétences en situation réelle, avec répétition et renforcement.",
+              "accompagne": "On s’entraîne ensemble, doucement, pour que ça devienne plus facile.",
+              "accompagnant": "Séances structurées : entraînement, répétition, valorisation des progrès.",
+              "partenaire_social": "Mise en œuvre des stratégies et entraînement en contexte."
+            }
+          },
+          "back": {
+            "text": {
+              "visitor": "On travaille en situation, avec des exercices concrets et des repères clairs. L’objectif : que les compétences soient utiles dans la vraie vie, pas seulement “en séance”.",
+              "accompagne": "On fait des exercices simples et concrets, et on répète jusqu’à ce que tu te sentes plus à l’aise. Je t’aide à voir tes progrès.",
+              "accompagnant": "On met en pratique avec une progression adaptée. On consolide les acquis et on ajuste si besoin, toujours dans un cadre sécurisant.",
+              "partenaire_social": "Déploiement des outils et des stratégies en situation. Ajustements selon les retours terrain et les observations."
+            },
+            "examples": {
+              "visitor": [
+                "Habiletés sociales (saluer, attendre son tour, demander).",
+                "Autonomie (transports, courses, organisation du temps).",
+                "Régulation (identifier une montée de stress, utiliser un outil)."
+              ],
+              "accompagne": [
+                "Apprendre à te calmer avec 1 ou 2 techniques simples.",
+                "T’aider à te repérer dans une routine (matin, repas, sorties).",
+                "T’entraîner à parler aux autres / à dire ce que tu ressens."
+              ],
+              "accompagnant": [
+                "EEntraînement progressif aux routines du quotidien.",
+                "Scénarios sociaux + jeux de rôles.",
+                "Outils de communication et d’organisation à réutiliser à la maison."
+              ],
+              "partenaire_social": [
+                "Mise en place de routines / supports dans la structure.",
+                "EEntraînement aux compétences adaptatives.",
+                "Alignement des pratiques et transmissions aux équipes."
+              ]
+            }
+          }
+        },
+
+        {
+          "title": {
+            "visitor": "Suivi et ajustements",
+            "accompagne": "Suivi et ajustements",
+            "accompagnant": "Suivi et ajustements",
+            "partenaire_social": "Suivi et ajustements"
+          },
+          "front": {
+            "summary": {
+              "visitor": "Mesurer les progrès, ajuster les stratégies, soutenir la généralisation.",
+              "accompagne": "On fait le point, on ajuste, et on garde ce qui marche pour toi.",
+              "accompagnant": "Points réguliers pour garder une progression réaliste et durable.",
+              "partenaire_social": "Évaluation continue, ajustements et continuité des interventions."
+            }
+          },
+          "back": {
+            "text": {
+              "visitor": "On fait des bilans réguliers : ce qui a progressé, ce qui reste difficile, et ce qu’on ajuste. L’accompagnement reste vivant et s’adapte à l’évolution de la situation.",
+              "accompagne": "On regarde tes progrès (même petits), et on adapte si c’est trop dur ou pas assez. Le but : avancer sans pression.",
+              "accompagnant": "On mesure l’efficacité des outils et on ajuste les objectifs. On vise une progression réaliste, et surtout transférable au quotidien.",
+              "partenaire_social": "Bilan des objectifs, ajustements des stratégies, consolidation et généralisation. Coordination si nécessaire avec les partenaires."
+            },
+            "examples": {
+              "visitor": [
+                "Adapter un objectif pour qu’il soit atteignable en étapes.",
+                "Renforcer un acquis avant d’ajouter une nouveauté.",
+                "Préparer une transition (nouveau lieu, nouvelle routine)."
+              ],
+              "accompagne": [
+                "Si une méthode ne te va pas, on en teste une autre.",
+                "On garde les outils qui te font du bien.",
+                "On prépare un changement pour éviter le stress."
+              ],
+              "accompagnant": [
+                "Ajuster le support visuel ou l’environnement.",
+                "Consolider les routines à la maison / en structure.",
+                "Préparer les transitions (école, structure, vacances)."
+              ],
+              "partenaire_social": [
+                "Réajuster le plan d’intervention selon l’évolution.",
+                "Harmoniser les outils entre intervenants.",
+                "Soutenir la continuité éducative et la transmission."
+              ]
+            }
+          }
+        }
+      ],
+
+      "principles": [
+        {
+          "visitor": "Respect du rythme et des préférences",
+          "accompagne": "Respect de ton rythme",
+          "accompagnant": "Respect du rythme et des préférences",
+          "partenaire_social": "Respect du rythme et des besoins"
+        },
+        {
+          "visitor": "Outils concrets (visuels, routines, scénarios)",
+          "accompagne": "Des outils simples et concrets",
+          "accompagnant": "Outils concrets (visuels, routines, scénarios)",
+          "partenaire_social": "Supports opérationnels (visuels, routines, scénarios)"
+        },
+        {
+          "visitor": "Collaboration avec l’entourage",
+          "accompagne": "On avance ensemble (si tu le veux)",
+          "accompagnant": "Collaboration avec l’entourage",
+          "partenaire_social": "Coordination et cohérence des interventions"
+        },
+        {
+          "visitor": "Progression observable et réaliste",
+          "accompagne": "Des progrès visibles, pas à pas",
+          "accompagnant": "Progression observable et réaliste",
+          "partenaire_social": "Objectifs mesurables et ajustements continus"
+        }
+      ]
+    },
+
+    "seo": {
+      "title": "Manon Pontasse - Approche",
+      "description": "Découvrez les étapes et principes de l’accompagnement éducatif spécialisé proposé à Strasbourg et Eurométropole : objectifs concrets, autonomie, habiletés sociales et coordination."
+    },
+
+    "ui": {
+      "stepsTitle": {
+        "visitor": "Étapes de l’accompagnement",
+        "accompagne": "Les étapes",
+        "accompagnant": "Étapes de l’accompagnement",
+        "partenaire_social": "Étapes d'un accompagnement"
+      },
+      "principlesTitle": {
+        "visitor": "Principes",
+        "accompagne": "Ce qui compte pour moi",
+        "accompagnant": "Principes",
+        "partenaire_social": "Principes d’intervention"
+      },
+      "exampleTitle": {
+        "visitor": "Exemples concrets",
+        "accompagne": "Des exemples",
+        "accompagnant": "Exemples concrets",
+        "partenaire_social": "Exemples d’application"
+      },
+      "secondaryCtaLabel": {
+        "visitor": "Me connaître",
+        "accompagne": "Me connaître",
+        "accompagnant": "Me connaître",
+        "partenaire_social": "En savoir plus"
+      },
+      "ctaTitle": {
+        "visitor": "Vous souhaitez échanger sur votre situation ?",
+        "accompagne": "Tu veux en parler ?",
+        "accompagnant": "Vous souhaitez échanger sur votre situation ?",
+        "partenaire_social": "Vous souhaitez échanger au sujet d’une situation ?"
+      },
+      "ctaText": {
+        "visitor": "Expliquez-moi votre contexte, même brièvement : je vous réponds dès que possible.",
+        "accompagne": "Explique-moi avec tes mots : je te réponds dès que possible.",
+        "accompagnant": "Décrivez votre situation : je vous réponds dès que possible.",
+        "partenaire_social": "Décrivez votre demande : je vous recontacte pour en discuter."
+      },
+      "ctaLabel": {
+        "visitor": "Me contacter",
+        "accompagne": "Me contacter",
+        "accompagnant": "Me contacter",
+        "partenaire_social": "Me contacter"
+      }
+    }
+  },
+  "informations": {
+    "seo": {
+      "title": "Manon Pontasse - Informations",
+      "description": "Repères simples et fiables sur la déficience intellectuelle et les troubles associés. Ressources et réponses aux questions fréquentes (Strasbourg et Eurométropole)."
+    },
+    "intro": {
+      "title": {
+        "visitor": "Informations",
+        "accompagne": "Informations",
+        "accompagnant": "Informations",
+        "partenaire_social": "Informations"
+      },
+      "subtitle": {
+        "visitor": "Comprendre la déficience intellectuelle",
+        "accompagne": "Comprendre la déficience intellectuelle",
+        "accompagnant": "Comprendre la déficience intellectuelle",
+        "partenaire_social": "Comprendre la déficience intellectuelle"
+      },
+      "lead": {
+        "visitor": "Cette page a pour objectif de vous apporter des repères simples et fiables.",
+        "accompagne": "Cette page a pour objectif de t'apporter des repères simples et fiables.",
+        "accompagnant": "Cette page a pour objectif de vous apporter des repères simples et fiables.",
+        "partenaire_social": "Cette page a pour objectif de vous apporter des repères simples et fiables."
+      }
+    },
+    "deficiency": {
+      "title": {
+        "visitor": "Qu’est-ce que la déficience intellectuelle ?",
+        "accompagne": "Qu’est-ce que la déficience intellectuelle ?",
+        "accompagnant": "Qu’est-ce que la déficience intellectuelle ?",
+        "partenaire_social": "Qu’est-ce que la déficience intellectuelle ?"
+      },
+      "paragraphs": [
+        "La déficience intellectuelle se caractérise par des limitations significatives du fonctionnement intellectuel et des comportements adaptatifs.",
+        "Elle apparaît durant la période de développement et peut avoir des répercussions sur l’apprentissage, la communication, l’autonomie et la vie sociale.",
+        "Chaque personne est unique : les capacités, les besoins et le rythme de progression varient d’un individu à l’autre."
+      ]
+    },
+    "associatedDisorders": {
+      "title": {
+        "visitor": "Troubles associés",
+        "accompagne": "Troubles associés",
+        "accompagnant": "Troubles associés",
+        "partenaire_social": "Troubles associés"
+      },
+      "intro": "Certaines personnes peuvent présenter un ou plusieurs troubles associés à la déficience intellectuelle.",
+      "items": [
+        {
+          "title": {
+            "visitor": "Troubles du spectre de l’autisme (TSA)",
+            "accompagne": "Troubles du spectre de l’autisme (TSA)",
+            "accompagnant": "Troubles du spectre de l’autisme (TSA)",
+            "partenaire_social": "Troubles du spectre de l’autisme (TSA)"
+          },
+          "text": {
+            "visitor": "difficultés dans la communication, les interactions sociales et comportements répétitifs.",
+            "accompagne": "difficultés dans la communication, les interactions sociales et comportements répétitifs.",
+            "accompagnant": "difficultés dans la communication, les interactions sociales et comportements répétitifs.",
+            "partenaire_social": "difficultés dans la communication, les interactions sociales et comportements répétitifs."
+          }
+        },
+        {
+          "title": {
+            "visitor": "Trouble du déficit de l’attention avec ou sans hyperactivité (TDAH)",
+            "accompagne": "Trouble du déficit de l’attention avec ou sans hyperactivité (TDAH)",
+            "accompagnant": "Trouble du déficit de l’attention avec ou sans hyperactivité (TDAH)",
+            "partenaire_social": "Trouble du déficit de l’attention avec ou sans hyperactivité (TDAH)"
+          },
+          "text": {
+            "visitor": "difficultés de concentration, impulsivité, agitation motrice.",
+            "accompagne": "difficultés de concentration, impulsivité, agitation motrice.",
+            "accompagnant": "difficultés de concentration, impulsivité, agitation motrice.",
+            "partenaire_social": "difficultés de concentration, impulsivité, agitation motrice."
+          }
+        },
+        {
+          "title": {
+            "visitor": "Troubles anxieux",
+            "accompagne": "Troubles anxieux",
+            "accompagnant": "Troubles anxieux",
+            "partenaire_social": "Troubles anxieux"
+          },
+          "text": {
+            "visitor": "anxiété, peurs excessives, difficultés à gérer les situations nouvelles.",
+            "accompagne": "anxiété, peurs excessives, difficultés à gérer les situations nouvelles.",
+            "accompagnant": "anxiété, peurs excessives, difficultés à gérer les situations nouvelles.",
+            "partenaire_social": "anxiété, peurs excessives, difficultés à gérer les situations nouvelles."
+          }
+        },
+        {
+          "title": {
+            "visitor": "Troubles du langage et de la communication",
+            "accompagne": "Troubles du langage et de la communication",
+            "accompagnant": "Troubles du langage et de la communication",
+            "partenaire_social": "Troubles du langage et de la communication"
+          },
+          "text": {
+            "visitor": "difficultés à comprendre ou à s’exprimer verbalement.",
+            "accompagne": "difficultés à comprendre ou à s’exprimer verbalement.",
+            "accompagnant": "difficultés à comprendre ou à s’exprimer verbalement.",
+            "partenaire_social": "difficultés à comprendre ou à s’exprimer verbalement."
+          }
+        },
+        {
+          "title": {
+            "visitor": "Troubles du comportement",
+            "accompagne": "Troubles du comportement",
+            "accompagnant": "Troubles du comportement",
+            "partenaire_social": "Troubles du comportement"
+          },
+          "text": {
+            "visitor": "opposition, agressivité, difficultés de régulation émotionnelle.",
+            "accompagne": "opposition, agressivité, difficultés de régulation émotionnelle.",
+            "accompagnant": "opposition, agressivité, difficultés de régulation émotionnelle.",
+            "partenaire_social": "opposition, agressivité, difficultés de régulation émotionnelle."
+          }
+        }
+      ]
+    },
+    "usefulLinks": {
+      "title": "Ressources",
+      "subtitle": "Pour comprendre, s’orienter et accéder à des ressources validées (HAS, INSERM…).",
+      "sections": [
+        {
+          "title": "Comprendre la déficience intellectuelle / TDI",
+          "items": [
+            {
+              "label": "HAS — Trouble du développement intellectuel (TDI) : recommandations",
+              "desc": "Recommandations de bonnes pratiques et guides.",
+              "source": "HAS",
+              "href": "https://www.has-sante.fr/jcms/p_3237847/fr/l-accompagnement-de-la-personne-presentant-un-trouble-du-developpement-intellectuel-tdi-volet-1"
+            },
+            {
+              "label": "INSERM — Déficiences intellectuelles (expertise collective)",
+              "desc": "Synthèse scientifique : définition, repères, enjeux.",
+              "source": "INSERM",
+              "href": "https://www.inserm.fr/expertise-collective/deficiences-intellectuelles/"
+            }
+          ]
+        },
+        {
+          "title": "Troubles associés (TSA, TDAH, DYS…)",
+          "items": [
+            {
+              "label": "Autisme Info Service — information & orientation",
+              "desc": "Plateforme d’écoute et d’information + annuaire de ressources.",
+              "source": "Autisme Info Service",
+              "href": "https://www.autismeinfoservice.fr/"
+            },
+            {
+              "label": "INSERM — TDAH : c’est quoi ?",
+              "desc": "Définition et repères clairs sur le trouble de l’attention.",
+              "source": "INSERM",
+              "href": "https://www.inserm.fr/c-est-quoi/minute-dattention-cest-quoi-le-tdah/"
+            },
+            {
+              "label": "HAS — TDAH enfant & ado : diagnostic et interventions",
+              "desc": "Recommandations de bonnes pratiques (enfants/adolescents).",
+              "source": "HAS",
+              "href": "https://www.has-sante.fr/jcms/p_3542493/fr/trouble-du-neurodeveloppement/-tdah-diagnostic-et-interventions-therapeutiques-aupres-des-enfants-et-adolescents-recommandations"
+            },
+            {
+              "label": "INSERM — Troubles spécifiques des apprentissages (troubles “dys”)",
+              "desc": "Dossier de référence sur les troubles des apprentissages.",
+              "source": "INSERM",
+              "href": "https://www.inserm.fr/dossier/troubles-specifiques-apprentissages/"
+            },
+            {
+              "label": "Fédération Française des DYS",
+              "desc": "Ressources, repères, actions et associations.",
+              "source": "Fédération Française des DYS",
+              "href": "https://www.ffdys.com/"
+            }
+          ]
+        },
+        {
+          "title": "Droits, démarches et ressources",
+          "items": [
+            {
+              "label": "Maison de l’autisme (gouv) — annuaire de ressources",
+              "desc": "Accès à l’annuaire Autisme Info Service.",
+              "source": "Maison de l’autisme",
+              "href": "https://maisondelautisme.gouv.fr/annuaire-ressources-autisme/"
+            }
+          ]
+        }
+      ]
+    },
+    "faq": {
+      "title": {
+        "visitor": "Questions fréquentes",
+        "accompagne": "Questions fréquentes",
+        "accompagnant": "Questions fréquentes",
+        "partenaire_social": "Questions fréquentes"
+      },
+      "lead": {
+        "visitor": "Voici quelques réponses aux questions les plus courantes.",
+        "accompagne": "Voici quelques réponses aux questions les plus courantes.",
+        "accompagnant": "Voici quelques réponses aux questions les plus courantes.",
+        "partenaire_social": "Voici quelques réponses aux questions les plus courantes."
+      },
+      "items": [
+        {
+          "q": "La déficience intellectuelle est-elle une maladie ?",
+          "a": "Non, ce n’est pas une maladie mais un handicap. Elle correspond à un fonctionnement intellectuel différent."
+        },
+        {
+          "q": "Peut-on progresser avec un accompagnement ?",
+          "a": "Oui, avec un accompagnement adapté, les personnes peuvent développer leurs compétences et gagner en autonomie."
+        },
+        {
+          "q": "Les troubles associés sont-ils systématiques ?",
+          "a": "Non, ils ne sont pas systématiques. Chaque personne a un profil unique."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "intro": {
+      "title": {
+        "visitor": "Me contacter",
+        "accompagne": "Me contacter",
+        "accompagnant": "Me contacter",
+        "partenaire_social": "Me contacter"
+      },
+      "subtitle": {
+        "visitor": "Parlons de votre situation",
+        "accompagne": "Parlons de ta situation",
+        "accompagnant": "Parlons de votre situation",
+        "partenaire_social": "Parlons de votre situation"
+      },
+      "lead": {
+        "visitor": "Expliquez-moi votre situation, même brièvement. Je vous répondrai avec attention.",
+        "accompagne": "Tu peux m’expliquer ce dont tu as besoin, avec tes mots.",
+        "accompagnant": "Vous pouvez m’expliquer votre situation. Je vous répondrai rapidement.",
+        "partenaire_social": "Décrivez votre demande : je vous recontacte pour en discuter."
+      }
+    },
+    "content": {
+      "submit": {
+        "label": {
+          "visitor": "Envoyer ma demande",
+          "accompagne": "Envoyer mon message",
+          "accompagnant": "Envoyer ma demande",
+          "partenaire_social": "Envoyer ma demande"
+        }
+      },
+      "helper": {
+        "responseTime": {
+          "visitor": "Je réponds généralement sous 48h.",
+          "accompagne": "Je réponds généralement sous 48h.",
+          "accompagnant": "Je réponds généralement sous 48h.",
+          "partenaire_social": "Je réponds généralement sous 48h."
+        }
+      },
+      "methods": [
+        {
+          "type": "email",
+          "label": {
+            "visitor": "Email",
+            "accompagne": "Email",
+            "accompagnant": "Email",
+            "partenaire_social": "Email"
+          },
+          "value": "manonpontasse@gmail.com"
+        },
+        {
+          "type": "phone",
+          "label": {
+            "visitor": "Téléphone",
+            "accompagne": "Téléphone",
+            "accompagnant": "Téléphone",
+            "partenaire_social": "Téléphone"
+          },
+          "value": "+33 6 04 16 40 87"
+        }
+      ],
+      "form": {
+        "submit": {
+          "label": {
+            "visitor": "Envoyer ma demande",
+            "accompagne": "Envoyer mon message",
+            "accompagnant": "Envoyer ma demande",
+            "partenaire_social": "Envoyer ma demande"
+          }
+        },
+        "helper": {
+          "responseTime": {
+            "visitor": "Je réponds généralement sous 48h.",
+            "accompagne": "Je réponds généralement sous 48h.",
+            "accompagnant": "Je réponds généralement sous 48h.",
+            "partenaire_social": "Je réponds généralement sous 48h."
+          }
+        },
+        "selects": {
+          "profile": {
+            "label": {
+              "visitor": "Je suis…",
+              "accompagne": "Je suis…",
+              "accompagnant": "Je suis…",
+              "partenaire_social": "Je suis…"
+            },
+            "placeholder": {
+              "visitor": "Choisir…",
+              "accompagne": "Choisir…",
+              "accompagnant": "Choisir…",
+              "partenaire_social": "Choisir…"
+            },
+            "optionsPath": "home.profileSelector.options"
+          },
+          "topic": {
+            "label": {
+              "visitor": "Ma demande concerne…",
+              "accompagne": "Ma demande concerne…",
+              "accompagnant": "Ma demande concerne…",
+              "partenaire_social": "Ma demande concerne…"
+            },
+            "placeholder": {
+              "visitor": "Choisir…",
+              "accompagne": "Choisir…",
+              "accompagnant": "Choisir…",
+              "partenaire_social": "Choisir…"
+            },
+            "optionsByProfile": {
+              "accompagne": [
+                {
+                  "value": "Demande d'informations",
+                  "label": "J’aimerais obtenir des informations"
+                },
+                {
+                  "value": "Demande de rendez-vous",
+                  "label": "Je souhaite prendre rendez-vous"
+                },
+                {
+                  "value": "Demande de suivi",
+                  "label": "Je souhaite débuter un accompagnement"
+                }
+              ],
+              "accompagnant": [
+                {
+                  "value": "Demande d'informations",
+                  "label": "Orientation / conseils pour un proche"
+                },
+                {
+                  "value": "Demande de coordination",
+                  "label": "Coordination autour d’une situation"
+                },
+                {
+                  "value": "Demande de rendez-vous",
+                  "label": "Demande de rendez-vous"
+                },
+                {
+                  "value": "Demande de suivi",
+                  "label": "Mise en place d’un accompagnement"
+                }
+              ],
+              "partenaire_social": [
+                {
+                  "value": "Demande de coordination",
+                  "label": "Coordination autour d’un bénéficiaire"
+                },
+                {
+                  "value": "Demande de projet",
+                  "label": "Échange autour d’un projet personnalisé"
+                },
+                {
+                  "value": "Demande d'orientation",
+                  "label": "Orientation vers un accompagnement"
+                },
+                {
+                  "value": "Demande de partenariat",
+                  "label": "Développement de partenariat"
+                },
+                {
+                  "value": "Demande d'intervention",
+                  "label": "Demande d’intervention / collaboration"
+                },
+                {
+                  "value": "Demande de rendez-vous",
+                  "label": "Prise de rendez-vous"
+                }
+              ],
+              "visitor": [
+                {
+                  "value": "Demande d'informations",
+                  "label": "Je souhaite des informations"
+                },
+                {
+                  "value": "Demande de rendez-vous",
+                  "label": "Je souhaite prendre rendez-vous"
+                },
+                {
+                  "value": "Autre demande",
+                  "label": "Autre"
+                }
+              ]
+            }
+          }
+        },
+        "fields": {
+          "name": "Nom",
+          "email": "Email",
+          "phone": "Téléphone",
+          "message": "Message"
+        },
+        "consent": "En soumettant ce formulaire, j’accepte que mes informations soient utilisées uniquement pour être recontacté(e)."
+      }
+    },
+    "seo": {
+      "title": "Manon Pontasse - Contact",
+      "description": "Contactez Manon Pontasse, éducatrice spécialisée indépendante à Strasbourg. Première prise de contact, questions, rendez-vous : réponse dès que possible (domicile, structure, visio)."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "intro": {
+        "title": "Politique de confidentialité",
+        "subtitle": "Protection de vos données",
+        "lead": "Vos informations sont utilisées uniquement pour répondre à votre demande."
+      },
+      "content": {
+        "paragraphs": [
+          "Les données collectées via le formulaire de contact sont utilisées uniquement pour vous recontacter.",
+          "Aucune donnée n’est vendue ou transmise à des tiers en dehors d’obligations légales."
+        ]
+      }
+    },
+    "terms": {
+      "intro": {
+        "title": "Mentions légales",
+        "subtitle": "Informations sur l’éditeur du site",
+        "lead": "À compléter selon votre statut et votre hébergeur."
+      },
+      "content": {
+        "paragraphs": [
+          "Nom / statut : (à compléter)",
+          "Adresse : (à compléter)",
+          "Hébergeur : (à compléter)"
+        ]
+      }
+    }
+  },
+  "legalPages": {
+    "legal": {
+      "title": "Mentions légales",
+      "intro": "Conformément aux dispositions de la LCEN, voici les informations légales du site.",
+      "publisher": {
+        "title": "Éditeur du site",
+        "nameLabel": "Nom",
+        "nameValue": "Manon Pontasse",
+        "statusLabel": "Statut",
+        "statusValue": "Éducatrice spécialisée indépendante",
+        "emailLabel": "Email",
+        "emailValue": "manonpontasse@gmail.com",
+        "addressLabel": "Adresse",
+        "addressValue": "Strasbourg, France",
+        "siretLabel": "SIRET",
+        "siretValue": "À compléter"
+      },
+      "publication": {
+        "title": "Responsable de publication",
+        "value": "Manon Pontasse"
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "providerLabel": "Hébergeur",
+        "providerValue": "À compléter (OVH, Vercel, etc.)",
+        "addressLabel": "Adresse",
+        "addressValue": "À compléter"
+      },
+      "ip": {
+        "title": "Propriété intellectuelle",
+        "text": "L’ensemble des contenus présents sur ce site (textes, images, graphismes, logo) sont la propriété exclusive de l’éditrice du site, sauf mention contraire. Toute reproduction est interdite sans autorisation."
+      }
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "intro": "Cette politique de confidentialité décrit comment sont collectées, utilisées et protégées vos données personnelles.",
+      "dataCollected": {
+        "title": "Données collectées",
+        "lead": "Les données personnelles collectées via le formulaire de contact sont :",
+        "items": ["Nom", "Adresse email", "Message"]
+      },
+      "use": {
+        "title": "Utilisation des données",
+        "text": "Ces informations sont utilisées uniquement afin de pouvoir vous recontacter suite à votre demande."
+      },
+      "retention": {
+        "title": "Durée de conservation",
+        "text": "Les données sont conservées pendant une durée maximale de 12 mois après le dernier échange."
+      },
+      "sharing": {
+        "title": "Partage des données",
+        "text": "Aucune donnée n’est vendue, cédée ou transmise à des tiers."
+      },
+      "rights": {
+        "title": "Droits des utilisateurs",
+        "lead": "Conformément au RGPD, vous disposez des droits suivants :",
+        "items": [
+          "Droit d’accès",
+          "Droit de rectification",
+          "Droit à l’effacement",
+          "Droit d’opposition"
+        ]
+      },
+      "contact": {
+        "text": "Pour exercer vos droits, contactez :",
+        "email": "manonpontasse@gmail.com"
+      }
+    }
+  },
+  "cookies": {
+    "enabled": true,
+    "title": "Cookies",
+    "text": "Ce site utilise uniquement des cookies nécessaires au bon fonctionnement (pas de publicité ni de tracking).",
+    "acceptLabel": "J’ai compris",
+    "moreLabel": "En savoir plus",
+    "moreHref": "/confidentialite"
+  },
+  "footer": {
+    "links": [
+      { "key": "legal", "to": "/legal", "label": "Mentions légales" },
+      {
+        "key": "privacy",
+        "to": "/privacy",
+        "label": "Politique de confidentialité"
+      }
+    ],
+    "copyright": {
+      "visitor": "© Manon Pontasse — Éducatrice spécialisée indépendante",
+      "accompagne": "© Manon Pontasse — Éducatrice spécialisée indépendante",
+      "accompagnant": "© Manon Pontasse — Éducatrice spécialisée indépendante",
+      "partenaire_social": "© Manon Pontasse — Éducatrice spécialisée indépendante"
+    },
+    "contact": {
+      "location": {
+        "visitor": "Strasbourg (et Eurométropole)",
+        "accompagne": "Strasbourg (et Eurométropole)",
+        "accompagnant": "Strasbourg (et Eurométropole)",
+        "partenaire_social": "Strasbourg (et Eurométropole)"
+      }
+    }
+  },
+  "about": {
+    "seo": {
+      "title": "À propos – Manon Pontasse",
+      "description": "Découvrez le parcours de Manon Pontasse, éducatrice spécialisée en libéral, et son approche de l’intervention à domicile."
+    },
+    "hero": {
+      "title": {
+        "visitor": "Me connaître",
+        "accompagne": "Me connaître",
+        "accompagnant": "Me connaître",
+        "partenaire_social": "Me connaître"
+      },
+      "lead": {
+        "visitor": "Enchantée, moi c’est Manon. Je vous présente mon parcours et mon choix de l’intervention à domicile.",
+        "accompagne": "Enchantée, moi c’est Manon. Je vais te présenter mon parcours et pourquoi j’interviens à domicile.",
+        "accompagnant": "Enchantée, moi c’est Manon. Je vous présente mon parcours et mon approche de l’intervention à domicile.",
+        "partenaire_social": "Présentation de mon parcours et de mon cadre d’intervention en libéral."
+      }
+    },
+
+    "presentation": {
+      "title": {
+        "visitor": "Enchantée, moi c’est Manon",
+        "accompagne": "Enchantée, moi c’est Manon",
+        "accompagnant": "Enchantée, moi c’est Manon",
+        "partenaire_social": "Parcours et cadre d’intervention"
+      },
+
+      "paragraphs": {
+        "visitor": [
+          "Travailleuse sociale diplômée d'État depuis 2019.",
+          "Éducatrice au sein d’un IMPro (Institut Médico-Professionnel), j’ai développé depuis 6 ans une expérience dans l’accompagnement auprès d'adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
+          "J’ai choisi de me lancer en libéral afin de développer une autre branche du métier : l'intervention à domicile.",
+          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience. Mon objectif : favoriser l’épanouissement et l’autonomie des personnes que j’accompagne."
+        ],
+
+        "accompagne": [
+          "Je m’appelle Manon, je suis travailleuse sociale diplômée d’État depuis 2019.",
+          "Depuis 6 ans, j’accompagne des adolescents en situation de handicap intellectuel, avec ou sans troubles associés, notamment au sein d’un IMPro.",
+          "J’ai choisi de travailler en libéral pour pouvoir intervenir aussi à domicile, dans ton quotidien.",
+          "Je m’adapte à tes besoins, avec écoute et patience. Mon objectif : t’aider à gagner en autonomie et à t’épanouir, à ton rythme."
+        ],
+
+        "accompagnant": [
+          "Travailleuse sociale diplômée d'État depuis 2019.",
+          "Éducatrice au sein d’un IMPro (Institut Médico-Professionnel), j’ai développé depuis 6 ans une expérience dans l’accompagnement auprès d'adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
+          "Je me suis lancée en libéral afin de proposer une intervention à domicile, au plus près du quotidien.",
+          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience. Mon objectif : favoriser l’épanouissement et l’autonomie des personnes accompagnées."
+        ],
+
+        "partenaire_social": [
+          "Travailleuse sociale diplômée d'État depuis 2019, avec 6 ans d’expérience en IMPro auprès d’adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
+          "Installation en libéral afin de développer des interventions à domicile, en complément des dispositifs existants.",
+          "Adaptation de l’accompagnement aux besoins identifiés, avec une posture d’écoute, un cadre structuré et des objectifs centrés sur l’autonomie.",
+          "Interventions pensées en lien avec les partenaires et les familles, dans une logique de continuité et de complémentarité."
+        ]
+      }
+    },
+    "keyPoints": {
+      "title": {
+        "visitor": "En bref",
+        "accompagne": "En bref",
+        "accompagnant": "En bref",
+        "partenaire_social": "Repères"
+      },
+      "items": {
+        "visitor": [
+          "Diplômée d’État depuis 2019",
+          "6 ans d’expérience en IMPro",
+          "Intervention à domicile en libéral"
+        ],
+        "accompagne": [
+          "Diplômée d’État depuis 2019",
+          "6 ans d’expérience en IMPro",
+          "Intervention à domicile, chez toi"
+        ],
+        "accompagnant": [
+          "Diplômée d’État depuis 2019",
+          "6 ans d’expérience en IMPro",
+          "Intervention à domicile en libéral"
+        ],
+        "partenaire_social": [
+          "Diplômée d’État depuis 2019",
+          "6 ans d’expérience en IMPro",
+          "Intervention à domicile en libéral"
+        ]
+      }
+    },
+    "callout": {
+      "text": {
+        "visitor": "Mon objectif : favoriser l’épanouissement et l’autonomie des personnes que j’accompagne.",
+        "accompagne": "Mon objectif : t’aider à t’épanouir et à gagner en autonomie, à ton rythme.",
+        "accompagnant": "Mon objectif : favoriser l’épanouissement et l’autonomie des personnes accompagnées.",
+        "partenaire_social": "Objectif : favoriser l’épanouissement et l’autonomie, au plus près du quotidien."
+      }
+    },
+    "cta": {
+      "title": {
+        "visitor": "Envie d’échanger ?",
+        "accompagne": "Tu veux en parler ?",
+        "accompagnant": "Envie d’échanger ?",
+        "partenaire_social": "Prendre contact"
+      },
+      "text": {
+        "visitor": "Je suis disponible pour répondre à vos questions et voir ce qui peut être mis en place.",
+        "accompagne": "Tu peux me contacter si tu as des questions ou si tu veux qu’on en parle.",
+        "accompagnant": "Je suis disponible pour répondre à vos questions et échanger sur votre situation.",
+        "partenaire_social": "Disponible pour échanger autour d’une situation ou d’un besoin d’accompagnement."
+      },
+      "button": {
+        "label": {
+          "visitor": "Me contacter",
+          "accompagne": "Me contacter",
+          "accompagnant": "Me contacter",
+          "partenaire_social": "Prendre contact"
+        },
+        "href": "/contact"
+      }
+    }
+  },
+  "notFound": {
+    "title": {
+      "visitor": "Page introuvable",
+      "accompagne": "Oups… page introuvable",
+      "accompagnant": "Page introuvable",
+      "partenaire_social": "Page introuvable"
+    },
+    "text": {
+      "visitor": "La page que vous cherchez n’existe pas (ou a été déplacée).",
+      "accompagne": "La page que tu cherches n’existe pas (ou a été déplacée).",
+      "accompagnant": "La page que vous cherchez n’existe pas (ou a été déplacée).",
+      "partenaire_social": "La page que vous cherchez n’existe pas (ou a été déplacée)."
+    },
+    "actions": {
+      "home": {
+        "label": {
+          "visitor": "Retour à l’accueil",
+          "accompagne": "Retour à l’accueil",
+          "accompagnant": "Retour à l’accueil",
+          "partenaire_social": "Retour à l’accueil"
+        },
+        "href": "/"
+      },
+      "contact": {
+        "label": {
+          "visitor": "Me contacter",
+          "accompagne": "Me contacter",
+          "accompagnant": "Me contacter",
+          "partenaire_social": "Me contacter"
+        },
+        "href": "/contact"
+      },
+      "back": {
+        "label": {
+          "visitor": "Revenir en arrière",
+          "accompagne": "Revenir en arrière",
+          "accompagnant": "Revenir en arrière",
+          "partenaire_social": "Revenir en arrière"
+        }
+      }
+    }
+  }
+}

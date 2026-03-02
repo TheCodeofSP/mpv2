@@ -1,0 +1,320 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+.info {
+  width: 100%;
+}
+
+/* Container */
+.info__container {
+  @include m.container;
+}
+
+/* HERO */
+.info__hero {
+  text-align: center;
+  margin-bottom: t.$space-xl;
+}
+
+.info__kicker {
+  margin: 0 0 t.$space-xs 0;
+  opacity: 0.88;
+  font-family: t.$font-family-subtitle;
+  color: t.$color-text-secondary;
+}
+
+.info__title {
+  @include m.title-h1;
+  margin-bottom: t.$space-s;
+}
+
+.info__lead {
+  @include m.text-lead;
+  margin: 0 auto;
+  max-width: t.$measure-text;
+}
+
+/* State (loading/error) */
+.info__state {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  text-align: center;
+}
+
+/* =========================
+   TOC mobile (collapsible)
+   ========================= */
+.info__tocMobile {
+  margin-bottom: t.$space-l;
+
+  @include m.up(t.$bp-tablet) {
+    display: none;
+  }
+}
+
+.info__tocDetails {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+  padding: 0;
+  overflow: hidden;
+}
+
+.info__tocSummary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+  font-weight: 800;
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.info__tocChevron {
+  opacity: 0.9;
+  transform: rotate(0deg);
+  transition: transform t.$duration-fast t.$ease-standard;
+}
+
+.info__tocDetails[open] .info__tocChevron {
+  transform: rotate(180deg);
+}
+
+.info__tocNav {
+  padding: 0 10px 12px 10px;
+}
+
+/* =========================
+   LAYOUT desktop
+   ========================= */
+.info__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: t.$space-l;
+  align-items: start;
+
+  @include m.up(t.$bp-tablet) {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+/* TOC desktop (sticky) */
+.info__toc {
+  display: none;
+
+  @include m.up(t.$bp-tablet) {
+    display: block;
+    position: sticky;
+    top: 16px;
+  }
+}
+
+.info__tocCard {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+}
+
+.info__tocTitle {
+  margin: 0 0 t.$space-s 0;
+  font-weight: 800;
+}
+
+.info__tocList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: t.$space-xs;
+}
+
+.info__tocLink {
+  display: inline-flex;
+  align-items: center;
+  gap: t.$space-xs;
+
+  text-decoration: none;
+  color: t.$color-text-primary;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+
+  transition:
+    background t.$transition-speed t.$ease-standard,
+    border-color t.$transition-speed t.$ease-standard,
+    transform t.$duration-fast t.$ease-standard;
+
+  &:hover {
+    background: t.$color-primary;
+    border-color: t.$color-border;
+    color: white;
+    transform: translateY(-1px);
+
+    &:active {
+      background: t.$color-primary;
+      border-color: t.$color-border;
+      color: white;
+      transform: translateY(0);
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+/* CONTENT */
+.info__content {
+  display: grid;
+  gap: t.$space-xl;
+}
+
+.info__section {
+  scroll-margin-top: 90px; /* utile avec header sticky */
+  @include m.section(t.$space-s);
+  gap: 0;
+}
+
+/* Titles */
+.info__h2 {
+  @include m.title-h2;
+  font-size: clamp(22px, 2.2vw, 28px);
+  margin-bottom: 0;
+}
+
+.info__h3 {
+  @include m.title-h3;
+  margin-bottom: 0;
+}
+
+/* Cards */
+.info__card {
+  @include m.card(t.$color-card-background, t.$shadow-sm);
+}
+
+.info__miniCard {
+  @include m.panel(t.$color-surface, t.$shadow-sm);
+}
+
+/* Text */
+.info__p {
+  @include m.text-body;
+  margin: 0 0 t.$space-s 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info__p--muted {
+  @include m.text-muted;
+  margin-bottom: t.$space-m;
+}
+
+/* Grid troubles associés */
+.info__grid {
+  @include m.grid(1, t.$space-m);
+
+  @include m.up(t.$bp-mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Stack */
+.info__stack {
+  display: grid;
+  gap: t.$space-s;
+}
+
+/* FAQ */
+.info__faq {
+  @include m.panel(t.$color-card-background, t.$shadow-sm);
+  padding: 10px 14px;
+
+  &[open] .info__faqQ {
+    border-bottom: 1px solid t.$color-border-secondary;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.info__faqQ {
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.info__faqA {
+  padding-top: 2px;
+}
+
+/* =========================
+   Ressources / Liens utiles
+   ========================= */
+.info__linksStack {
+  display: grid;
+  gap: t.$space-l;
+}
+
+.info__linksGroup .info__h3 {
+  margin-bottom: t.$space-s;
+}
+
+.info__linksGrid {
+  @include m.grid(1, t.$space-m);
+
+  @include m.up(t.$bp-mobile) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.info__linkCard {
+  @include m.link-reset;
+
+  display: grid;
+  gap: 6px;
+
+  @include m.card(t.$color-card-background, t.$shadow-sm);
+  padding: 14px 16px;
+
+  @include m.lift(-2px, t.$shadow-md);
+  @include m.focus(2px);
+}
+
+.info__linkLabel {
+  font-weight: 800;
+  color: t.$color-text-primary;
+  line-height: 1.25;
+}
+
+.info__linkDesc {
+  color: t.$color-text-secondary;
+  line-height: t.$line-height-text;
+}
+
+.info__linkSource {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: t.$color-primary;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.info__linkMeta {
+  margin-top: 2px;
+  font-weight: 800;
+  opacity: 0.85;
+  color: t.$color-text-primary;
+}

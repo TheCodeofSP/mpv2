@@ -1,0 +1,200 @@
+@use "./tokens.scss" as t;
+
+/* ======================================================
+   ANIMATIONS — Douces, génériques, accessibles
+   - Mobile-friendly
+   - Reduced motion
+   - Reveal on scroll via .reveal + .is-visible
+   ====================================================== */
+
+/* ----------------------------
+   Helpers (media queries)
+   ---------------------------- */
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+/* ----------------------------
+   Keyframes (doux)
+   ---------------------------- */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.995);
+    filter: blur(0.2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Transition douce lors d’un swap de contenu (ex: changement de profil) */
+@keyframes swapFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------
+   Mixins utiles (optionnels)
+   ---------------------------- */
+
+/* Reveal (si tu veux l’appliquer sans classes) */
+@mixin reveal-base {
+  --delay: 0ms;
+  opacity: 0;
+  transform: translateY(8px);
+  will-change: opacity, transform;
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+}
+
+/* Quick in (tabs/panels) */
+@mixin quick-in($duration: 240ms) {
+  opacity: 0;
+  animation: fadeIn $duration t.$ease-out forwards;
+
+  @include reduced-motion {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Hover lift (si tu veux l’appliquer sans card()/lift()) */
+@mixin hover-lift($y: -2px) {
+  transition: transform t.$duration-fast t.$ease-standard;
+
+  @include hover {
+    &:hover {
+      transform: translateY($y);
+    }
+  }
+
+  @include reduced-motion {
+    transition: none !important;
+  }
+}
+
+/* Swap doux de contenu (à mettre sur un wrapper qui change) */
+@mixin swap-fade($duration: t.$duration-medium) {
+  animation: swapFade $duration t.$ease-out both;
+
+  @include reduced-motion {
+    animation: none !important;
+  }
+}
+
+/* -----------------------------
+   Reveal on scroll (classes)
+   Usage:
+   <div class="reveal">...</div>
+   <div class="reveal" style={{"--delay":"120ms"}}>...</div>
+   Le hook JS ajoute .is-visible
+----------------------------- */
+.reveal {
+  --delay: 0ms;
+  opacity: 0;
+  transform: translateY(10px);
+  will-change: opacity, transform;
+
+  /* petit polish : évite l’effet “snap” si le navigateur coupe l’animation */
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.reveal.is-visible {
+  animation: riseIn t.$duration-slow t.$ease-out var(--delay) both;
+  opacity: 1;
+  transform: none;
+}
+
+/* Variantes */
+.reveal--fade.is-visible {
+  animation: fadeIn t.$duration-slow t.$ease-out var(--delay) forwards;
+}
+
+.reveal--up.is-visible {
+  animation: slideUp t.$duration-slow t.$ease-out var(--delay) forwards;
+}
+
+/* Variante douce “swap” (utile quand tu changes de profil) */
+.reveal--swap.is-visible {
+  animation: swapFade t.$duration-medium t.$ease-out var(--delay) forwards;
+}
+
+/* Sécurité reduced-motion (en plus, au cas où) */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Visible */
+.reveal[data-reveal="true"] {
+  animation: riseIn t.$duration-slow t.$ease-out var(--delay) forwards;
+}
+
+.reveal--fade[data-reveal="true"] {
+  animation: fadeIn t.$duration-slow t.$ease-out var(--delay) forwards;
+}
+
+.reveal--up[data-reveal="true"] {
+  animation: slideUp t.$duration-slow t.$ease-out var(--delay) forwards;
+}
+
+.reveal--swap[data-reveal="true"] {
+  animation: swapFade t.$duration-medium t.$ease-out var(--delay) forwards;
+}
+
+/* Safety reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal[data-reveal="true"] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

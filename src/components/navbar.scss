@@ -1,0 +1,399 @@
+@use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+
+/* =========================
+   Mobile-first (base)
+   ========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: t.$space-m;
+  position: relative;
+}
+
+/* Burger visible par défaut (mobile) */
+.navbar__burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+
+  border-radius: t.$radius-button;
+  background: transparent;
+  color: t.$color-secondary;
+  cursor: pointer;
+
+  z-index: t.$z-dropdown;
+
+  transition:
+    background t.$duration-fast t.$ease-standard,
+    transform t.$duration-fast t.$ease-standard;
+
+  @include m.hover {
+    &:hover {
+      background: t.$input-background;
+      transform: translateY(-1px);
+    }
+  }
+
+  span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin: 3px auto;
+    background: currentColor;
+
+    transition:
+      transform 180ms t.$ease-standard,
+      opacity 180ms t.$ease-standard;
+    transform-origin: center;
+  }
+
+  &.is-open {
+    span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+/* Overlay mobile (papier) */
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(231, 216, 198, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  border: 0;
+  z-index: t.$z-overlay;
+}
+
+/* Menu mobile : popover premium */
+.navbar__links {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+
+  width: min(340px, calc(100vw - 24px));
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: t.$space-xs;
+
+  background: t.$paper-sheen-gradient, t.$color-card-background;
+  border: t.$card-border;
+  outline: t.$glass-border;
+  outline-offset: -1px;
+
+  border-radius: t.$radius-card;
+  box-shadow: t.$shadow-glass;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  z-index: t.$z-dropdown;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+
+  transition:
+    opacity 220ms t.$ease-out,
+    transform 220ms t.$ease-out,
+    visibility 0ms linear 220ms;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition:
+      opacity 220ms t.$ease-out,
+      transform 220ms t.$ease-out,
+      visibility 0ms;
+  }
+}
+
+/* Liens */
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+
+  color: t.$color-text-primary;
+  font-weight: 700;
+  text-decoration: none;
+
+  padding: 10px 12px;
+  border-radius: t.$radius-button;
+  border: 1px solid transparent;
+
+  transition:
+    background t.$duration-medium t.$ease-standard,
+    border-color t.$duration-medium t.$ease-standard,
+    transform t.$duration-fast t.$ease-standard;
+
+  @include m.hover {
+    &:hover {
+      transform: translateY(-1px);
+      background: t.$color-primary;
+      color: white;
+      border-color: transparent;
+    }
+  }
+
+  &.active {
+      background: t.$color-primary;
+    color: white;
+  }
+
+  @include m.focus(2px);
+}
+
+/* Dropdown */
+.navbar__dropdown {
+  position: relative;
+}
+
+/* Bouton “Informations” */
+.navbar__dropbtn {
+  width: 100%;
+  appearance: none;
+
+  background: t.$input-background;
+  border: 1px solid t.$color-border;
+
+  color: t.$color-text-primary;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: t.$radius-button;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  transition:
+    background t.$duration-medium t.$ease-standard,
+    border-color t.$duration-medium t.$ease-standard,
+    transform t.$duration-fast t.$ease-standard;
+
+  @include m.hover {
+    &:hover {
+      background: t.$color-primary;
+      transform: translateY(-1px);
+      color: white;
+    }
+  }
+
+  &.is-active {
+    background: t.$color-primary;
+    color: white;
+  }
+
+  @include m.focus(2px);
+}
+
+.navbar__chev {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+/* Sous-liens mobile */
+.navbar__mobileSub {
+  display: none;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.navbar__mobileSub.is-open {
+  display: grid;
+}
+
+.navbar__sublink {
+  display: block;
+  text-decoration: none;
+
+  padding: 10px 12px;
+  margin-left: t.$space-s;
+
+  border-left: 2px solid t.$color-border;
+  border-radius: t.$radius-button;
+
+  color: t.$color-text-primary;
+  opacity: 0.92;
+
+  @include m.hover {
+    &:hover {
+      background: t.$input-background;
+    }
+  }
+
+  @include m.focus(2px);
+}
+
+/* Desktop dropdown menu (caché en mobile) */
+.navbar__menu {
+  display: none;
+}
+
+/* =========================
+   Desktop (>= mobile bp)
+   ========================= */
+@include m.up(t.$bp-mobile) {
+  /* Burger/overlay off */
+  .navbar__burger,
+  .navbar__overlay {
+    display: none;
+  }
+
+  /* Menu inline */
+  .navbar__links {
+    position: static;
+    width: auto;
+    padding: 0;
+
+    flex-direction: row;
+    align-items: center;
+    gap: t.$space-l;
+
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  /* Bouton dropdown : en desktop il devient “link-like” */
+  .navbar__dropbtn {
+    width: auto;
+    border: 1px solid transparent;
+    background: transparent;
+    justify-content: center;
+
+    @include m.hover {
+      &:hover {
+        background: t.$color-primary;
+        color: white;
+      }
+    }
+  }
+
+  /* Pas de sous-menu mobile en desktop */
+  .navbar__mobileSub {
+    display: none !important;
+  }
+
+  .navbar__dropdown::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 12px;
+  }
+
+  .navbar__menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 260px;
+
+    background: t.$paper-sheen-gradient, t.$color-card-background;
+    border: t.$card-border;
+    outline: t.$glass-border;
+    outline-offset: -1px;
+
+    border-radius: t.$radius-card;
+    box-shadow: t.$shadow-glass;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 10px;
+    z-index: t.$z-dropdown;
+
+    display: grid;
+    gap: 6px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(6px);
+    transform-origin: top left;
+
+    transition:
+      opacity 160ms t.$ease-standard,
+      transform 160ms t.$ease-standard,
+      visibility 0ms linear 160ms;
+  }
+
+  /* Ouvre au hover / focus-within / état is-open (clavier) */
+  .navbar__dropdown:hover .navbar__menu,
+  .navbar__dropdown:focus-within .navbar__menu,
+  .navbar__dropdown.is-open .navbar__menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(12px);
+    transition:
+      opacity 160ms t.$ease-standard,
+      transform 160ms t.$ease-standard,
+      visibility 0ms;
+  }
+
+  .navbar__menuItem {
+    display: block;
+    text-decoration: none;
+
+    padding: 10px 12px;
+    border-radius: t.$radius-button;
+
+    color: t.$color-text-primary;
+    font-weight: 700;
+
+    border: 1px solid transparent;
+
+    transition:
+      background t.$duration-medium t.$ease-standard,
+      border-color t.$duration-medium t.$ease-standard,
+      transform t.$duration-fast t.$ease-standard;
+
+    @include m.hover {
+      &:hover {
+        background: t.$color-primary;
+        color:white;
+        transform: translateY(-1px);
+      }
+    }
+
+    @include m.focus(2px);
+  }
+}

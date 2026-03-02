@@ -1,0 +1,94 @@
+@use "../style/tokens.scss" as t;
+
+.toast {
+  position: fixed;
+  z-index: 9999;
+
+  /* Position par défaut */
+  right: 16px;
+  bottom: 16px;
+
+  width: min(420px, calc(100vw - 32px));
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+
+  background: t.$color-card-background;
+  border: 1px solid t.$color-border;
+  box-shadow: t.$shadow-lg;
+  backdrop-filter: blur(10px);
+
+  /* animation d’entrée */
+  opacity: 0;
+  transform: translateY(8px);
+  animation: toastIn 220ms ease-out forwards;
+
+  @media (max-width: t.$mobile) {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+  }
+}
+
+@keyframes toastIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast__title {
+  margin: 0;
+  font-weight: 800;
+  color: white;
+}
+
+.toast__msg {
+  margin: 4px 0 0 0;
+  color: white;
+  line-height: t.$line-height-text;
+}
+
+.toast__close {
+  appearance: none;
+  color: white;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+
+  transition: transform 160ms ease, background t.$transition-speed ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: t.$color-surface;
+  }
+
+  &:focus-visible {
+    outline: 3px solid t.$focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+/* Variantes */
+.toast--success {
+  border-color: t.$color-success;
+  background: t.$color-success;
+  color: white;
+}
+
+.toast--error {
+  border-color: t.$color-danger;
+    background: t.$color-danger;
+    color: white;
+}
