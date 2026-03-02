@@ -217,7 +217,7 @@ export default function Process() {
     <>
       <SEO
         path="approach"
-        fallbackTitle="Approche – Manon Pontasse"
+        fallbackTitle="Manon Pontasse - Approche"
         fallbackDesc="Découvrez les étapes et principes de l’accompagnement éducatif spécialisé."
       />
 
