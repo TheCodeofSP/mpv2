@@ -11,11 +11,15 @@
    ---------------------------- */
 @mixin focus($offset: 2px, $strong: false) {
   &:focus-visible {
-    outline: 3px solid if($strong, t.$focus-ring-strong, t.$focus-ring);
+    @if $strong {
+      outline: 3px solid t.$focus-ring-strong;
+    } @else {
+      outline: 3px solid t.$focus-ring;
+    }
+
     outline-offset: $offset;
   }
 }
-
 /* Respect reduced motion (premium + a11y) */
 @mixin reduce-motion {
   @media (prefers-reduced-motion: reduce) {
