@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useContent } from "../content/useContent.js";
 import "./informations.scss";
 import SEO from "../seo/SEO.jsx";
+import Signature from "../components/Signature.jsx";
 
 function scrollToHash(hash) {
   if (!hash) return;
@@ -310,6 +311,7 @@ export default function Informations() {
             </div>
           </div>
         </div>
+        <Signature type="emotional" variant="subtle" />
       </div>
     </>
   );

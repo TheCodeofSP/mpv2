@@ -292,7 +292,6 @@ export default function Process() {
                           : `Voir le verso (détails) : ${title}`
                       }
                     >
-
                       <div className="timeline__cardInner" aria-hidden="true">
                         {/* FRONT */}
                         <span className="timeline__face timeline__face--front">
@@ -373,9 +372,8 @@ export default function Process() {
               </Link>
             </div>
           </section>
-
-          <Signature type="emotional" variant="subtle" />
         </div>
+        <Signature type="emotional" variant="subtle" />
       </div>
     </>
   );

@@ -5,7 +5,7 @@ import "./about.scss";
 import SEO from "../seo/SEO.jsx";
 import Signature from "../components/Signature.jsx";
 
-import Portrait from "../assets/portraitmp.jpg";
+import Portrait from "../assets/portraitHome.webp";
 
 export default function About() {
   const { t, list, isLoading, error } = useContent();
@@ -118,24 +118,23 @@ export default function About() {
                 {presTitle}
               </h2>
               <div className="about__presentation">
-              <div
-                className="about__avatarWrap reveal reveal--up"
-                aria-hidden="true"
-                style={{ "--delay": "0ms" }}
-              >
-                <img className="about__avatar" src={Portrait} alt="" />
-              </div>
-
-              {presParagraphs.length > 0 && (
-                <div className="about__paragraphs">
-                  {presParagraphs.map((p, idx) => (
-                    <p key={idx} className="about__p about__p--body">
-                      {p}
-                    </p>
-                  ))}
+                <div
+                  className="about__avatarWrap reveal reveal--up"
+                  aria-hidden="true"
+                  style={{ "--delay": "0ms" }}
+                >
+                  <img className="about__avatar" src={Portrait} alt="" />
                 </div>
-              )}
 
+                {presParagraphs.length > 0 && (
+                  <div className="about__paragraphs">
+                    {presParagraphs.map((p, idx) => (
+                      <p key={idx} className="about__p about__p--body">
+                        {p}
+                      </p>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {calloutText && (
@@ -164,9 +163,8 @@ export default function About() {
               )}
             </div>
           </section>
-
-          <Signature type="emotional" variant="subtle" />
         </div>
+        <Signature type="emotional" variant="subtle" />
       </div>
     </>
   );

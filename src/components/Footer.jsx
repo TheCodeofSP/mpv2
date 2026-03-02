@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import "./footer.scss";
-import Logo from "../assets/logo4.png";
+import Logo from "../assets/logo4.webp";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { useContent } from "../content/useContent.js";
 import Signature from "./Signature.jsx";

@@ -272,7 +272,6 @@ export default function Contact() {
         fallbackDesc="Contactez une éducatrice spécialisée en déficience intellectuelle."
       />
 
-      <main className="contact">
         {/* ✅ UN SEUL TOAST : composant Toast */}
         <Toast
           open={status.type !== "idle"}
@@ -577,7 +576,6 @@ export default function Contact() {
 
           <Signature type="emotional" variant="subtle" />
         </div>
-      </main>
     </>
   );
 }

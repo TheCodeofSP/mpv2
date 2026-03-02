@@ -6,7 +6,7 @@ import { useContent } from "../content/useContent.js";
 import { useProfile } from "../context/profile/ProfileContext.jsx";
 
 import "./home.scss";
-import Portrait from "../assets/portraitmp.jpg";
+import Portrait from "../assets/portraitHome.webp";
 import SEO from "../seo/SEO.jsx";
 import Signature from "../components/Signature.jsx";
 
@@ -248,9 +248,8 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          <Signature type="emotional" variant="subtle" />
         </div>
+        <Signature type="emotional" variant="subtle" />
       </div>
     </>
   );
