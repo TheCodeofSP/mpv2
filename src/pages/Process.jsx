@@ -69,6 +69,14 @@ export default function Process() {
   );
   const ctaLabel = t(`${base}.ui.ctaLabel`, "Me contacter");
 
+  const pricingsTitle = t(`${base}.ui.pricingsTitle`, "Tarifs");
+
+    const pricingsText = t(
+    `${base}.ui.pricingsText`,
+    "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter.",
+  );
+ 
+
   // ======================================================
   // Option A (mobile) : micro “nudge” du hint quand in-view
   // ======================================================
@@ -353,6 +361,18 @@ export default function Process() {
                   </article>
                 );
               })}
+            </div>
+          </section>
+
+          <section
+            className="process__footerCta reveal"
+            style={{ "--delay": "120ms" }}
+          >
+            <div className="process__footerCard">
+              <h2 className="process__h2">{pricingsTitle}</h2>
+              <p className="process__p process__p--muted">
+                {pricingsText}
+              </p>{" "}
             </div>
           </section>
 

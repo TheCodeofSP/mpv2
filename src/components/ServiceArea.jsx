@@ -6,8 +6,13 @@ import "./serviceArea.scss";
 function modalityIcon(label) {
   const s = String(label || "").toLowerCase();
 
-  if (s.includes("visio") || s.includes("vidéo") || s.includes("video")) return FiVideo;
-  if (s.includes("structure") || s.includes("établissement") || s.includes("organisme"))
+  if (s.includes("visio") || s.includes("vidéo") || s.includes("video"))
+    return FiVideo;
+  if (
+    s.includes("structure") ||
+    s.includes("établissement") ||
+    s.includes("organisme")
+  )
     return FiUsers;
   if (s.includes("domicile") || s.includes("chez")) return FiHome;
 
@@ -24,6 +29,7 @@ export default function ServiceArea({
 
   const title = t("home.serviceArea.title", "");
   const text = t("home.serviceArea.text", "");
+  const note = t("home.serviceArea.note", "");
 
   const modalitiesList = useMemo(() => {
     const raw = node("home.serviceArea.modalities");
@@ -35,7 +41,7 @@ export default function ServiceArea({
   const titleId = `service-area-title-${uid}`;
 
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    mapQuery
+    mapQuery,
   )}&output=embed`;
 
   return (
@@ -58,7 +64,10 @@ export default function ServiceArea({
         {text && <p className="service-area__text">{text}</p>}
 
         {modalitiesList.length > 0 && (
-          <ul className="service-area__chips" aria-label="Modalités d’intervention">
+          <ul
+            className="service-area__chips"
+            aria-label="Modalités d’intervention"
+          >
             {modalitiesList.map((m, i) => {
               const Icon = modalityIcon(m);
               return (
@@ -72,6 +81,7 @@ export default function ServiceArea({
             })}
           </ul>
         )}
+        {note && <p className="service-area__note">{note}</p>}
 
         {showMap && (
           <div className="service-area__mapWrap">

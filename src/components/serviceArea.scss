@@ -54,7 +54,7 @@
   &__chips {
     list-style: none;
     padding: 0;
-    margin: t.$space-s 0 0;
+    margin: t.$space-s 0 t.$space-s 0;
 
     display: flex;
     flex-wrap: wrap;

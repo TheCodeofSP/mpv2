@@ -153,7 +153,15 @@
         "accompagne": ["À domicile", "En structure", "En visio"],
         "accompagnant": ["À domicile", "En structure", "En visio"],
         "partenaire_social": ["À domicile", "En structure", "En visio"]
-      }
+      },
+      "note": [
+        {
+          "visitor": "Les modalités sont à définir selon les besoins et le contexte. L’accompagnement en visio peut être une option complémentaire ou temporaire selon les situations.",
+          "accompagne": "Les modalités sont à définir selon tes besoins et le contexte. L’accompagnement en visio peut être une option complémentaire ou temporaire selon les situations.",
+          "accompagnant": "Les modalités sont à définir selon les besoins et le contexte. L’accompagnement en visio peut être une option complémentaire ou temporaire selon les situations.",
+          "partenaire_social": "Les modalités sont à définir selon les besoins et le contexte. L’accompagnement en visio peut être une option complémentaire ou temporaire selon les situations."
+        }
+      ]
     },
     "intro": {
       "title": {
@@ -425,10 +433,6 @@
         "partenaire_social": "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter."
       }
     },
-    "notes": [
-      "Les modalités (à domicile, en structure, visio) sont à définir selon les besoins et le contexte.",
-      "Les troubles associés peuvent inclure des difficultés de communication, TSA, TDAH, troubles anxieux, etc."
-    ],
     "cta": {
       "primary": {
         "label": {
