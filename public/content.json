@@ -222,19 +222,19 @@
       },
       "options": [
         {
-          "key": "visitor",
+          "key": "Un(e) Visiteur(trice)",
           "label": "Un(e) Visiteur(trice)"
         },
         {
-          "key": "accompagne",
+          "key": "Un(e) accompagné(e)",
           "label": "Un(e) accompagné(e)"
         },
         {
-          "key": "accompagnant",
+          "key": "Un(e) accompagnant(e)",
           "label": "Un(e) accompagnant(e)"
         },
         {
-          "key": "partenaire_social",
+          "key": "Un(e) partenaire_social(e)",
           "label": "Un(e) partenaire social(e)"
         }
       ]
