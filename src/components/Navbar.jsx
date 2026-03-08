@@ -27,7 +27,7 @@ export default function Navbar() {
       { label: "FAQ", to: "/informations#faq" },
       { label: "Ressources", to: "/informations#ressources" },
     ],
-    []
+    [],
   );
 
   // Ferme menus quand on change de route
@@ -169,7 +169,10 @@ export default function Navbar() {
         <span />
       </button>
 
-      <div id="navbar-menu" className={`navbar__links ${open ? "is-open" : ""}`}>
+      <div
+        id="navbar-menu"
+        className={`navbar__links ${open ? "is-open" : ""}`}
+      >
         <Link to="/" onClick={close} className="navbar__link">
           Accueil
         </Link>

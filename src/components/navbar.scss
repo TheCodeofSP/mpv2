@@ -71,12 +71,9 @@
 
 /* Overlay mobile (papier) */
 .navbar__overlay {
-  position: fixed;
   inset: 0;
 
-  background: rgba(231, 216, 198, 0.6);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
+  background: t.$color-card-background;
 
   border: 0;
   z-index: t.$z-overlay;
@@ -86,9 +83,8 @@
 .navbar__links {
   position: absolute;
   right: 0;
-  top: calc(100% + 10px);
+  top: calc(100% + 20px);
 
-  width: min(340px, calc(100vw - 24px));
   padding: 14px;
 
   display: flex;
@@ -96,16 +92,13 @@
   align-items: stretch;
   gap: t.$space-xs;
 
-  background: t.$paper-sheen-gradient, t.$color-card-background;
+  background: t.$color-card-background;
   border: t.$card-border;
   outline: t.$glass-border;
   outline-offset: -1px;
 
   border-radius: t.$radius-card;
   box-shadow: t.$shadow-glass;
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 
   z-index: t.$z-dropdown;
 
@@ -160,7 +153,7 @@
   }
 
   &.active {
-      background: t.$color-primary;
+    background: t.$color-primary;
     color: white;
   }
 
@@ -178,7 +171,6 @@
   appearance: none;
 
   background: t.$input-background;
-  border: 1px solid t.$color-border;
 
   color: t.$color-text-primary;
   font-weight: 700;
@@ -280,8 +272,6 @@
     outline: none;
     border-radius: 0;
     box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
 
     opacity: 1;
     visibility: visible;
@@ -325,16 +315,13 @@
     top: 100%;
     min-width: 260px;
 
-    background: t.$paper-sheen-gradient, t.$color-card-background;
+    background: t.$color-card-background;
     border: t.$card-border;
     outline: t.$glass-border;
     outline-offset: -1px;
 
     border-radius: t.$radius-card;
     box-shadow: t.$shadow-glass;
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     padding: 10px;
     z-index: t.$z-dropdown;
@@ -389,7 +376,7 @@
     @include m.hover {
       &:hover {
         background: t.$color-primary;
-        color:white;
+        color: white;
         transform: translateY(-1px);
       }
     }

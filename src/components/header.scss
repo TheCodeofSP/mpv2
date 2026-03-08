@@ -5,11 +5,11 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: t.$z-header;
+  z-index: 1000;
   border-radius: t.$radius-card;
 
   /* Fond “papier glass” */
-  background: t.$paper-sheen-gradient, t.$color-card-background;
+  background:  t.$color-card-background;
   border-bottom: 1px solid t.$color-border;
   box-shadow: t.$shadow-glass;
 

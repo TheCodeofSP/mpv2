@@ -90,41 +90,21 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 22px;
   width: 2px;
-  transform: translateX(-50%);
   background: t.$color-border;
   border-radius: t.$radius-pill;
-
-  @include m.up(t.$bp-tablet) {
-    left: 18px;
-    transform: none;
-  }
 }
 
 .timeline__item {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 80px 1fr;
+  grid-template-columns: 44px minmax(0, 1fr);
   align-items: start;
-
-  /* la perspective doit être sur un parent stable */
+  column-gap: t.$space-s;
   perspective: 1200px;
-
-  @include m.up(t.$bp-tablet) {
-    grid-template-columns: 48px 1fr;
-  }
 }
 
-/* ✅ FIX IMPORTANT
-   Ton observer ajoute .is-visible “à la main”.
-   Au clic, React re-render => il réécrit className et peut faire sauter .is-visible.
-   Si l’élément a .reveal mais perd .is-visible => opacity:0 => “disparition”.
-
-   On neutralise donc .reveal uniquement ici (timeline), pour éviter ce bug.
-   L’apparition progressive reste gérée par tes autres reveals (titres/sections),
-   et tu peux aussi ajouter des reveals sur des wrappers non re-rendus si tu veux.
-*/
 .timeline__item.reveal {
   opacity: 1 !important;
   transform: none !important;
@@ -132,8 +112,9 @@
 }
 
 .timeline__dot {
-  grid-column: 2;
+  grid-column: 1;
   justify-self: center;
+  z-index: 2;
 
   width: 44px;
   height: 44px;
@@ -148,74 +129,59 @@
 
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: t.$shadow-sm;
-
-  @include m.up(t.$bp-tablet) {
-    grid-column: 1;
-    justify-self: start;
-  }
 }
 
-/* =========================
-   FLIP CARD (vraie carte)
-   ========================= */
-
 .timeline__card {
-  /* bouton reset */
+  grid-column: 2;
   appearance: none;
   border: none;
-  background: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
   cursor: pointer;
   text-align: left;
-
   width: 100%;
-  padding: 0; /* padding dans les faces */
   border-radius: t.$radius-card;
-
-  /* IMPORTANT : pas de background ici, il est sur les faces */
-  background: transparent;
-
   position: relative;
-  overflow: hidden;
 
-  /* interaction */
-  @include m.liftCardProcess(-2px, t.$shadow-md);
   @include m.focus(2px);
 
-  /* évite un “glitch” sur certains navigateurs */
   -webkit-tap-highlight-color: transparent;
 }
 
 .timeline__cardInner {
   position: relative;
   width: 100%;
-  min-height: 350px;
+  min-height: 240px;
+  border-radius: t.$radius-card;
 
   transform-style: preserve-3d;
   transition: transform t.$duration-slow t.$ease-in-out;
-
-  /* perf */
   will-change: transform;
-
-  @media (min-width: t.$bp-mobile) {
-    min-height: 100px;
-  }
 }
 
 .timeline__face {
   position: absolute;
   inset: 0;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: t.$space-s;
+
+  padding: t.$space-s;
+  border-radius: t.$radius-card;
+
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
-  padding: t.$space-xs;
-  display: grid;
-
-  background: t.$paper-sheen-gradient, t.$color-card-background;
+  border: 1px solid t.$color-border;
+  box-shadow: t.$shadow-md;
 }
 
 .timeline__face--front {
   transform: rotateY(0deg);
+  background: t.$paper-sheen-gradient, t.$color-card-background;
 }
 
 .timeline__face--back {
@@ -223,96 +189,113 @@
   background: t.$paper-sheen-gradient, t.$color-surface;
 }
 
-/* Flip via state (mobile / click) */
+.timeline__faceBody {
+  display: grid;
+  gap: t.$space-xs;
+  align-content: start;
+}
+
+.timeline__eyebrow {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: t.$color-text-secondary;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.timeline__examples {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.35rem;
+
+  li {
+    @include m.text-body;
+    color: t.$color-text-secondary;
+  }
+}
+
+.timeline__tapHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: start;
+
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: t.$color-link;
+  opacity: 0.9;
+}
+
+/* Flip au clic / state */
 .timeline__item.is-flipped .timeline__cardInner {
   transform: rotateY(180deg);
 }
 
-/* Desktop : flip au hover/focus */
+/* Hover desktop seulement */
 @media (hover: hover) and (pointer: fine) {
   .timeline__card:hover .timeline__cardInner,
   .timeline__card:focus-visible .timeline__cardInner {
     transform: rotateY(180deg);
-    box-shadow: none;
   }
 }
 
-/* ✅ Alternance gauche/droite en MOBILE */
-.timeline__card {
-  grid-column: 1; /* valeur par défaut */
-}
-.timeline__item.is-left .timeline__card {
-  grid-column: 1;
-  justify-self: end;
-}
-.timeline__item.is-right .timeline__card {
-  grid-column: 3;
-  justify-self: start;
-}
+/* =========================
+   TABLET+
+   ========================= */
 
-/* En TABLET/DESKTOP : tout sur la colonne contenu (à droite de la ligne) */
 @include m.up(t.$bp-tablet) {
+  .timeline__line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline__item {
+    grid-template-columns: 1fr 80px 1fr;
+    column-gap: 0;
+  }
+
+  .timeline__dot {
+    grid-column: 2;
+    justify-self: center;
+  }
+
   .timeline__card {
-    grid-column: 2 !important;
-    justify-self: stretch !important;
+    width: min(100%, 520px);
+  }
+
+  .timeline__item.is-left .timeline__card {
+    grid-column: 1;
+    justify-self: end;
+    margin-right: t.$space-m;
+  }
+
+  .timeline__item.is-right .timeline__card {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: t.$space-m;
+  }
+
+  .timeline__cardInner {
+    min-height: 160px;
   }
 }
 
-/* Hint */
-.timeline__hint {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 2;
+/* =========================
+   DESKTOP LARGE
+   ========================= */
 
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 6px 10px;
-  border-radius: t.$radius-pill;
-
-  background: t.$paper-sheen-gradient, t.$color-surface;
-  border: 1px solid t.$color-border-secondary;
-  box-shadow: t.$shadow-sm;
-
-  font-weight: 700;
-  font-size: 0.92rem;
-  color: t.$color-text-secondary;
-
-  svg {
-    width: 16px;
-    height: 16px;
-    opacity: 0.9;
-  }
-
-  @media (max-width: t.$bp-mobile) {
-    span {
-      display: none;
-    }
+@include m.up(t.$bp-desktop) {
+  .timeline__cardInner {
+    min-height: 160px;
   }
 }
 
-/* Micro indice mobile */
-.timeline__tapHint {
-  display: none;
-  font-weight: 700;
-  opacity: 0.85;
-  color: t.$color-link;
-  text-underline-offset: 3px;
-  justify-self: start;
-}
+/* =========================
+   REDUCED MOTION
+   ========================= */
 
-@media (max-width: t.$bp-mobile) {
-  .timeline__tapHint {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-}
-
-
-/* Reduced motion : pas de 3D, swap simple */
 @media (prefers-reduced-motion: reduce) {
   .timeline__cardInner {
     transition: none !important;
@@ -325,7 +308,7 @@
     transform: none !important;
     backface-visibility: visible;
     -webkit-backface-visibility: visible;
-    padding-top: 22px;
+    box-shadow: none;
   }
 
   .timeline__face--back {
@@ -337,7 +320,7 @@
   }
 
   .timeline__item.is-flipped .timeline__face--back {
-    display: grid;
+    display: flex;
   }
 }
 

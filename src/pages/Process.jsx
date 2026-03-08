@@ -71,11 +71,10 @@ export default function Process() {
 
   const pricingsTitle = t(`${base}.ui.pricingsTitle`, "Tarifs");
 
-    const pricingsText = t(
+  const pricingsText = t(
     `${base}.ui.pricingsText`,
     "Les tarifs sont modulables selon le type d’intervention défini ensemble. Des aides financières peuvent être possibles. N’hésitez pas à me contacter pour en discuter.",
   );
- 
 
   // ======================================================
   // Option A (mobile) : micro “nudge” du hint quand in-view
@@ -297,35 +296,48 @@ export default function Process() {
                       aria-label={
                         isFlipped
                           ? `Revenir au recto : ${title}`
-                          : `Voir le verso (détails) : ${title}`
+                          : `Voir le verso : ${title}`
                       }
                     >
-                      <div className="timeline__cardInner" aria-hidden="true">
-                        {/* FRONT */}
-                        <span className="timeline__face timeline__face--front">
-                          <h3 className="process__h3">{title}</h3>
-                          {frontSummary && (
-                            <p className="process__p process__p--muted">
-                              {frontSummary}
-                            </p>
-                          )}
+                      <div className="timeline__cardInner">
+                        {/* RECTO */}
+                        <div className="timeline__face timeline__face--front">
+                          <div className="timeline__faceBody">
+                            <p className="timeline__eyebrow">Étape {num}</p>
+                            <h3 className="process__h3">{title}</h3>
+
+                            {frontSummary && (
+                              <p className="process__p process__p--muted">
+                                {frontSummary}
+                              </p>
+                            )}
+                          </div>
 
                           <span
                             className="timeline__tapHint"
                             aria-hidden="true"
                           >
-                            → En détail
+                            Voir le détail →
                           </span>
-                        </span>
+                        </div>
 
-                        {/* BACK */}
-                        <span className="timeline__face timeline__face--back">
-                          {backText && (
-                            <p className="process__p process__p--muted">
-                              {backText}
-                            </p>
-                          )}
-                        </span>
+                        {/* VERSO */}
+                        <div className="timeline__face timeline__face--back">
+                          <div className="timeline__faceBody">
+                            {backText && (
+                              <p className="process__p process__p--muted">
+                                {backText}
+                              </p>
+                            )}
+                          </div>
+
+                          <span
+                            className="timeline__tapHint"
+                            aria-hidden="true"
+                          >
+                            ← Revenir
+                          </span>
+                        </div>
                       </div>
 
                       <span className="sr-only">
