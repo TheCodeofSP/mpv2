@@ -146,14 +146,14 @@
   @include m.hover {
     &:hover {
       transform: translateY(-1px);
-      background: t.$color-primary;
+      background: t.$color-primary-hover;
       color: white;
       border-color: transparent;
     }
   }
 
   &.active {
-    background: t.$color-primary;
+      background: t.$color-primary;
     color: white;
   }
 
@@ -170,7 +170,7 @@
   width: 100%;
   appearance: none;
 
-  background: t.$input-background;
+  background: transparent;
 
   color: t.$color-text-primary;
   font-weight: 700;
@@ -190,14 +190,14 @@
 
   @include m.hover {
     &:hover {
-      background: t.$color-primary;
+      background: t.$color-primary-hover;
       transform: translateY(-1px);
       color: white;
     }
   }
 
   &.is-active {
-    background: t.$color-primary;
+      background: t.$color-primary;
     color: white;
   }
 
@@ -235,7 +235,8 @@
 
   @include m.hover {
     &:hover {
-      background: t.$input-background;
+      background: t.$color-primary-hover;
+      color: white
     }
   }
 
@@ -289,7 +290,7 @@
 
     @include m.hover {
       &:hover {
-        background: t.$color-primary;
+      background: t.$color-primary-hover;
         color: white;
       }
     }
@@ -375,7 +376,7 @@
 
     @include m.hover {
       &:hover {
-        background: t.$color-primary;
+      background: t.$color-primary-hover;
         color: white;
         transform: translateY(-1px);
       }

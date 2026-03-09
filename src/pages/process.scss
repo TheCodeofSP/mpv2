@@ -26,7 +26,6 @@
 .process__title {
   @include m.title-h1;
   text-align: center;
-  margin-bottom: 0;
 }
 
 .process__lead {
@@ -152,7 +151,6 @@
 .timeline__cardInner {
   position: relative;
   width: 100%;
-  min-height: 240px;
   border-radius: t.$radius-card;
 
   transform-style: preserve-3d;
@@ -167,7 +165,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: t.$space-s;
+  gap: t.$space-xs;
 
   padding: t.$space-s;
   border-radius: t.$radius-card;
@@ -191,7 +189,6 @@
 
 .timeline__faceBody {
   display: grid;
-  gap: t.$space-xs;
   align-content: start;
 }
 
@@ -275,10 +272,6 @@
     grid-column: 3;
     justify-self: start;
     margin-left: t.$space-m;
-  }
-
-  .timeline__cardInner {
-    min-height: 160px;
   }
 }
 

@@ -40,7 +40,6 @@
     display: flex;
     flex-direction: row;
     gap: t.$space-xs;
-    margin-top: t.$space-s;
   }
 }
 
@@ -53,7 +52,6 @@
 
 .about__title {
   @include m.title-h1;
-  margin-bottom: 0;
   text-align: center;
 }
 
@@ -130,6 +128,17 @@
   @include m.lift(-2px, t.$shadow-lg);
 }
 
+.about__presentationHeader {
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-xs;
+
+  @media (min-width: t.$bp-mobile) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
 .about__card--featured {
   text-align: center;
   padding: clamp(18px, 2.6vw, 28px);
@@ -137,6 +146,12 @@
 
 .about__h2 {
   @include m.title-h2;
+  margin-bottom: 0;
+}
+
+.about__presentationHeaderText {
+  display: grid;
+  margin: auto;
 }
 
 .about__h2--center {

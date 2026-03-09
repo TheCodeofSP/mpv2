@@ -1,4 +1,10 @@
-import { useMemo, useRef, useState, useEffect } from "react";
+import {
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+  useLayoutEffect,
+} from "react";
 import { Link } from "react-router-dom";
 import { useContent } from "../content/useContent.js";
 import "./process.scss";
@@ -15,7 +21,6 @@ import {
   FiShield,
   FiCompass,
   FiMessageCircle,
-  FiRefreshCcw,
 } from "react-icons/fi";
 
 export default function Process() {
@@ -30,6 +35,11 @@ export default function Process() {
 
   // Flip state (mobile/touch + click desktop)
   const [flipped, setFlipped] = useState({}); // { [idx]: boolean }
+
+  // Hauteur partagée = plus grande face (recto/verso) de toutes les cards
+  const [maxCardHeight, setMaxCardHeight] = useState(240);
+  const frontRefs = useRef([]);
+  const backRefs = useRef([]);
 
   const toggleFlip = (idx) => {
     setFlipped((prev) => ({ ...prev, [idx]: !prev[idx] }));
@@ -77,6 +87,49 @@ export default function Process() {
   );
 
   // ======================================================
+  // Mesure la plus grande face parmi toutes les cards
+  // ======================================================
+  useLayoutEffect(() => {
+    const measure = () => {
+      const heights = [];
+
+      frontRefs.current.forEach((el) => {
+        if (el) heights.push(el.scrollHeight);
+      });
+
+      backRefs.current.forEach((el) => {
+        if (el) heights.push(el.scrollHeight);
+      });
+
+      if (heights.length) {
+        const next = Math.max(...heights);
+        setMaxCardHeight(next);
+      }
+    };
+
+    const raf = requestAnimationFrame(measure);
+
+    let ro = null;
+    if (typeof ResizeObserver !== "undefined") {
+      ro = new ResizeObserver(() => {
+        measure();
+      });
+
+      [...frontRefs.current, ...backRefs.current].forEach((el) => {
+        if (el) ro.observe(el);
+      });
+    }
+
+    window.addEventListener("resize", measure);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", measure);
+      if (ro) ro.disconnect();
+    };
+  }, [steps, content]);
+
+  // ======================================================
   // Option A (mobile) : micro “nudge” du hint quand in-view
   // ======================================================
   const itemRefs = useRef([]);
@@ -85,7 +138,6 @@ export default function Process() {
     const els = itemRefs.current.filter(Boolean);
     if (!els.length) return;
 
-    // only mobile/coarse pointer
     const isTouch =
       typeof window !== "undefined" &&
       window.matchMedia &&
@@ -168,13 +220,11 @@ export default function Process() {
 
             autoFlippedOnce.current = true;
 
-            // flip idx 0 only if user didn't already flip
             setFlipped((prev) => {
               if (prev[0] === true) return prev;
               return { ...prev, 0: true };
             });
 
-            // auto return
             unflipTimer = window.setTimeout(() => {
               setFlipped((prev) => {
                 if (prev[0] !== true) return prev;
@@ -262,10 +312,6 @@ export default function Process() {
                 const title = s?.title ?? "";
                 const frontSummary = s?.front?.summary ?? s?.text ?? "";
                 const backText = s?.back?.text ?? s?.text ?? "";
-                const backExamples = Array.isArray(s?.back?.examples)
-                  ? s.back.examples
-                  : [];
-
                 const isFlipped = !!flipped[idx];
 
                 return (
@@ -299,9 +345,17 @@ export default function Process() {
                           : `Voir le verso : ${title}`
                       }
                     >
-                      <div className="timeline__cardInner">
+                      <div
+                        className="timeline__cardInner"
+                        style={{ height: `${maxCardHeight}px` }}
+                      >
                         {/* RECTO */}
-                        <div className="timeline__face timeline__face--front">
+                        <div
+                          ref={(el) => {
+                            frontRefs.current[idx] = el;
+                          }}
+                          className="timeline__face timeline__face--front"
+                        >
                           <div className="timeline__faceBody">
                             <p className="timeline__eyebrow">Étape {num}</p>
                             <h3 className="process__h3">{title}</h3>
@@ -322,7 +376,12 @@ export default function Process() {
                         </div>
 
                         {/* VERSO */}
-                        <div className="timeline__face timeline__face--back">
+                        <div
+                          ref={(el) => {
+                            backRefs.current[idx] = el;
+                          }}
+                          className="timeline__face timeline__face--back"
+                        >
                           <div className="timeline__faceBody">
                             {backText && (
                               <p className="process__p process__p--muted">
@@ -382,9 +441,7 @@ export default function Process() {
           >
             <div className="process__footerCard">
               <h2 className="process__h2">{pricingsTitle}</h2>
-              <p className="process__p process__p--muted">
-                {pricingsText}
-              </p>{" "}
+              <p className="process__p process__p--muted">{pricingsText}</p>
             </div>
           </section>
 

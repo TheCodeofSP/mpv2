@@ -18,6 +18,10 @@ export default function About() {
   const keyItems = list("about.keyPoints.items");
 
   const presTitle = t("about.presentation.title", "Enchantée, moi c’est Manon");
+  const presSubtitle = t(
+    "about.presentation.subtitle",
+    "Travailleuse sociale diplômée d’État depuis 2019.",
+  );
   const presParagraphs = list("about.presentation.paragraphs");
 
   const calloutText = t("about.callout.text", "");
@@ -111,13 +115,7 @@ export default function About() {
               className="about__card about__card--featured reveal"
               style={{ "--delay": "0ms" }}
             >
-              <h2
-                className="about__h2 about__h2--center"
-                id="about-presentation"
-              >
-                {presTitle}
-              </h2>
-              <div className="about__presentation">
+              <div className="about__presentationHeader">
                 <div
                   className="about__avatarWrap reveal reveal--up"
                   aria-hidden="true"
@@ -125,7 +123,18 @@ export default function About() {
                 >
                   <img className="about__avatar" src={Portrait} alt="" />
                 </div>
+                <div className="about__presentationHeaderText">
+                  <h2
+                    className="about__h2 about__h2--center"
+                    id="about-presentation"
+                  >
+                    {presTitle}
+                  </h2>
+                  <p className="about__subtitle">{presSubtitle}</p>
+                </div>
+              </div>
 
+              <div className="about__presentation">
                 {presParagraphs.length > 0 && (
                   <div className="about__paragraphs">
                     {presParagraphs.map((p, idx) => (

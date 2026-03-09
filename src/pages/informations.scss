@@ -25,8 +25,8 @@
 
 .info__title {
   @include m.title-h1;
-  margin-bottom: t.$space-s;
-}
+  text-align: center;
+  }
 
 .info__lead {
   @include m.text-lead;
@@ -153,7 +153,7 @@
     transform t.$duration-fast t.$ease-standard;
 
   &:hover {
-    background: t.$color-primary;
+      background: t.$color-primary-hover;
     border-color: t.$color-border;
     color: white;
     transform: translateY(-1px);

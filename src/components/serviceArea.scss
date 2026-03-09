@@ -155,6 +155,10 @@
       overflow: hidden;
     }
 
+    .service-area__cityList {
+      justify-content: flex-start;
+    }
+
     .service-area__chips {
       justify-content: flex-start;
     }
@@ -184,11 +188,80 @@
   border: transparent;
   padding: 0;
   width: 28px;
-      svg {
-      width: 25px;
-      height: 28px;
-      opacity: 0.9;
-    }
-
+  svg {
+    width: 25px;
+    height: 28px;
+    opacity: 0.9;
+  }
 }
 
+.service-area {
+  &__map--leaflet {
+    overflow: hidden;
+  }
+
+  &__cityList {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__cityItem {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 6px 10px;
+    border-radius: t.$radius-pill;
+    border: 1px solid t.$color-border;
+    background: t.$input-background;
+    color: t.$color-text-primary;
+    font-family: t.$font-family-text;
+    font-weight: t.$font-weight-button;
+    font-size: 0.95rem;
+  }
+
+  &__leafletMarker {
+    background: transparent;
+    border: 0;
+  }
+
+  &__leafletMarkerInner {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: white;
+    border: 2px solid currentColor;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.service-area {
+  &__cityListWrap {
+    margin-top: 12px;
+  }
+
+  &__cityToggle {
+      color: t.$color-link;
+      font-weight: 700;
+      text-decoration: none;
+      text-underline-offset: 3px;
+
+      transition:
+        color t.$duration-medium t.$ease-standard,
+        transform t.$duration-fast t.$ease-standard;
+
+      @include m.hover {
+        &:hover {
+          color: t.$color-link-hover;
+          text-decoration: underline;
+          transform: translateY(-1px);
+        }
+
+      @include m.focus(2px);
+    }
+  }
+}

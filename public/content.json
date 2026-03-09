@@ -143,10 +143,10 @@
         "partenaire_social": "Zone d’intervention"
       },
       "text": {
-        "visitor": "Strasbourg et Eurométropole.",
-        "accompagne": "Strasbourg et Eurométropole.",
-        "accompagnant": "Strasbourg et Eurométropole.",
-        "partenaire_social": "Strasbourg et Eurométropole."
+        "visitor": "Strasbourg et Eurométropole Sud.",
+        "accompagne": "Strasbourg et Eurométropole Sud.",
+        "accompagnant": "Strasbourg et Eurométropole Sud.",
+        "partenaire_social": "Strasbourg et Eurométropole Sud."
       },
       "modalities": {
         "visitor": ["À domicile", "En structure", "En visio"],
@@ -211,7 +211,7 @@
     },
     "seo": {
       "title": "Manon Pontasse - Éducatrice spécialisée à Strasbourg",
-      "description": "Éducatrice spécialisée indépendante à Strasbourg et Eurométropole. Accompagnement éducatif en déficience intellectuelle (avec ou sans troubles associés), à domicile, en structure ou en visio."
+      "description": "Éducatrice spécialisée indépendante à Strasbourg et Eurométropole Sud. Accompagnement éducatif en déficience intellectuelle (avec ou sans troubles associés), à domicile, en structure ou en visio."
     },
     "profileSelector": {
       "label": {
@@ -223,7 +223,7 @@
       "options": [
         {
           "key": "visitor",
-          "label": "Un(e) Visiteur(trice)"
+          "label": "Un(e) Visiteur(se)"
         },
         {
           "key": "accompagne",
@@ -586,7 +586,7 @@
             "text": {
               "visitor": "On transforme la demande en objectifs concrets, réalistes et motivants. Puis je propose des outils adaptés au fonctionnement de la personne pour soutenir les apprentissages.",
               "accompagne": "On choisit des objectifs que tu peux atteindre pas à pas. Et on met en place des outils simples pour t’aider au quotidien (repères, routines, astuces).",
-              "accompagnant": "On construit un plan clair : objectifs priorisés, étapes, supports. L’idée : que vous puissiez aussi utiliser les outils entre les séances.",
+              "accompagnant": "On construit un projet d’accompagnement clair : objectifs priorisés, étapes, supports. L'idée : que vous puissiez transposer les outils / supports dans le quotidien et dans les différents lieux.",
               "partenaire_social": "Définition d’objectifs mesurables, hiérarchisation, supports d’intervention et modalités de généralisation."
             },
             "examples": {
@@ -633,7 +633,7 @@
             "text": {
               "visitor": "On travaille en situation, avec des exercices concrets et des repères clairs. L’objectif : que les compétences soient utiles dans la vraie vie, pas seulement “en séance”.",
               "accompagne": "On fait des exercices simples et concrets, et on répète jusqu’à ce que tu te sentes plus à l’aise. Je t’aide à voir tes progrès.",
-              "accompagnant": "On met en pratique avec une progression adaptée. On consolide les acquis et on ajuste si besoin, toujours dans un cadre sécurisant.",
+              "accompagnant": "On met en pratique avec une progression adaptée à la personne. On consolide les acquis et on réadapte au besoin, toujours dans un cadre sécurisant et bienveillant.",
               "partenaire_social": "Déploiement des outils et des stratégies en situation. Ajustements selon les retours terrain et les observations."
             },
             "examples": {
@@ -680,7 +680,7 @@
             "text": {
               "visitor": "On fait des bilans réguliers : ce qui a progressé, ce qui reste difficile, et ce qu’on ajuste. L’accompagnement reste vivant et s’adapte à l’évolution de la situation.",
               "accompagne": "On regarde tes progrès (même petits), et on adapte si c’est trop dur ou pas assez. Le but : avancer sans pression.",
-              "accompagnant": "On mesure l’efficacité des outils et on ajuste les objectifs. On vise une progression réaliste, et surtout transférable au quotidien.",
+              "accompagnant": "On mesure l'efficacité des outils et de l'accompagnement, on ajuste les objectifs. On vise une progression réaliste, à long terme.",
               "partenaire_social": "Bilan des objectifs, ajustements des stratégies, consolidation et généralisation. Coordination si nécessaire avec les partenaires."
             },
             "examples": {
@@ -739,7 +739,7 @@
 
     "seo": {
       "title": "Manon Pontasse - Approche",
-      "description": "Découvrez les étapes et principes de l’accompagnement éducatif spécialisé proposé à Strasbourg et Eurométropole : objectifs concrets, autonomie, habiletés sociales et coordination."
+      "description": "Découvrez les étapes et principes de l’accompagnement éducatif spécialisé proposé à Strasbourg et Eurométropole Sud : objectifs concrets, autonomie, habiletés sociales et coordination."
     },
 
     "ui": {
@@ -790,7 +790,7 @@
   "informations": {
     "seo": {
       "title": "Manon Pontasse - Informations",
-      "description": "Repères simples et fiables sur la déficience intellectuelle et les troubles associés. Ressources et réponses aux questions fréquentes (Strasbourg et Eurométropole)."
+      "description": "Repères simples et fiables sur la déficience intellectuelle et les troubles associés. Ressources et réponses aux questions fréquentes (Strasbourg et Eurométropole Sud)."
     },
     "intro": {
       "title": {
@@ -1323,10 +1323,10 @@
     },
     "contact": {
       "location": {
-        "visitor": "Strasbourg (et Eurométropole)",
-        "accompagne": "Strasbourg (et Eurométropole)",
-        "accompagnant": "Strasbourg (et Eurométropole)",
-        "partenaire_social": "Strasbourg (et Eurométropole)"
+        "visitor": "Strasbourg et Eurométropole Sud.",
+        "accompagne": "Strasbourg et Eurométropole Sud.",
+        "accompagnant": "Strasbourg et Eurométropole Sud.",
+        "partenaire_social": "Strasbourg et Eurométropole Sud."
       }
     }
   },
@@ -1357,31 +1357,33 @@
         "accompagnant": "Enchantée, moi c’est Manon",
         "partenaire_social": "Parcours et cadre d’intervention"
       },
+      "subtitle": {
+        "visitor": "Travailleuse sociale diplômée d'État depuis 2019.",
+        "accompagne": "Je m’appelle Manon, je suis travailleuse sociale diplômée d’État depuis 2019.",
+        "accompagnant": "Travailleuse sociale diplômée d'État depuis 2019.",
+        "partenaire_social": "Travailleuse sociale diplômée d'État depuis 2019, avec 6 ans d’expérience en IMPro auprès d’adolescents en situation de handicap intellectuel, avec ou sans troubles associés."
+      },
 
       "paragraphs": {
         "visitor": [
-          "Travailleuse sociale diplômée d'État depuis 2019.",
           "Éducatrice au sein d’un IMPro (Institut Médico-Professionnel), j’ai développé depuis 6 ans une expérience dans l’accompagnement auprès d'adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
           "J’ai choisi de me lancer en libéral afin de développer une autre branche du métier : l'intervention à domicile.",
-          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience. Mon objectif : favoriser l’épanouissement et l’autonomie des personnes que j’accompagne."
+          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience."
         ],
 
         "accompagne": [
-          "Je m’appelle Manon, je suis travailleuse sociale diplômée d’État depuis 2019.",
           "Depuis 6 ans, j’accompagne des adolescents en situation de handicap intellectuel, avec ou sans troubles associés, notamment au sein d’un IMPro.",
           "J’ai choisi de travailler en libéral pour pouvoir intervenir aussi à domicile, dans ton quotidien.",
-          "Je m’adapte à tes besoins, avec écoute et patience. Mon objectif : t’aider à gagner en autonomie et à t’épanouir, à ton rythme."
+          "Je m’adapte à tes besoins, avec écoute et patience."
         ],
 
         "accompagnant": [
-          "Travailleuse sociale diplômée d'État depuis 2019.",
           "Éducatrice au sein d’un IMPro (Institut Médico-Professionnel), j’ai développé depuis 6 ans une expérience dans l’accompagnement auprès d'adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
           "Je me suis lancée en libéral afin de proposer une intervention à domicile, au plus près du quotidien.",
-          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience. Mon objectif : favoriser l’épanouissement et l’autonomie des personnes accompagnées."
+          "J’adapte mon accompagnement aux besoins de chacun, avec dynamisme, motivation et une grande capacité d’écoute et de patience."
         ],
 
         "partenaire_social": [
-          "Travailleuse sociale diplômée d'État depuis 2019, avec 6 ans d’expérience en IMPro auprès d’adolescents en situation de handicap intellectuel, avec ou sans troubles associés.",
           "Installation en libéral afin de développer des interventions à domicile, en complément des dispositifs existants.",
           "Adaptation de l’accompagnement aux besoins identifiés, avec une posture d’écoute, un cadre structuré et des objectifs centrés sur l’autonomie.",
           "Interventions pensées en lien avec les partenaires et les familles, dans une logique de continuité et de complémentarité."

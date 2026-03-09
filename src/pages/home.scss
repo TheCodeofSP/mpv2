@@ -128,14 +128,14 @@
   @include m.hover {
     &:hover {
       transform: translateY(-1px);
-      background: t.$color-primary;
+      background: t.$color-primary-hover;
       color: white;
       border-color: transparent;
     }
   }
 
   &.is-active {
-    background: t.$color-primary;
+      background: t.$color-primary;
     color: white;
     border-color: transparent;
   }

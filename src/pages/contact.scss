@@ -1,4 +1,6 @@
 @use "../style/tokens.scss" as t;
+@use "../style/mixins.scss" as m;
+@use "../style/animations.scss";
 
 .contact {
   width: 100%;
@@ -31,12 +33,8 @@
 }
 
 .contact__title {
-  margin: 0 0 t.$spacing-s 0;
-  font-family: t.$font-family-title;
-  font-weight: t.$font-weight-title;
-  font-size: clamp(40px, 5vw, t.$font-size-title);
-  line-height: t.$line-height-title;
-  color: t.$color-title;
+  @include m.title-h1;
+  text-align: center;
 }
 
 .contact__lead {

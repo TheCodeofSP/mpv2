@@ -296,6 +296,7 @@
   @include hover {
     &:hover {
       background: t.$color-primary-hover;
+      color: t.$button-text;
     }
   }
 }
@@ -308,7 +309,8 @@
 
   @include hover {
     &:hover {
-      background: t.$color-surface-hover;
+      background: t.$color-primary-hover;
+      color: t.$button-text;
     }
   }
 }

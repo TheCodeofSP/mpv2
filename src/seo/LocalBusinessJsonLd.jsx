@@ -30,7 +30,7 @@ export default function LocalBusinessJsonLd() {
       name: siteName,
       url,
       areaServed: [
-        { "@type": "AdministrativeArea", name: "Eurométropole de Strasbourg" },
+        { "@type": "AdministrativeArea", name: "Eurométropole Sud de Strasbourg" },
         { "@type": "City", name: "Strasbourg" },
       ],
       address: {

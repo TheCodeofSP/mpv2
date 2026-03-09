@@ -118,9 +118,6 @@ select {
    Titres : base (optionnel)
    => tu peux aussi styliser au cas par cas via mixins
 ----------------------------- */
-h1 { @include m.title-h1; }
-h2 { @include m.title-h2; }
-h3 { @include m.title-h3; }
 
 ul,
 ol {
