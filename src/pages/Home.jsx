@@ -172,27 +172,23 @@ export default function Home() {
                 </div>
 
                 {/* Panel : reveal--swap (plus premium au changement de profil) */}
-                <div
-                  id={tabPanelId}
-                  className="home__panel reveal reveal--swap is-visible"
-                  role="tabpanel"
-                  tabIndex={0}
-                  aria-labelledby={
-                    options[activeIndex]?.key
-                      ? tabId(options[activeIndex].key)
-                      : undefined
-                  }
-                >
-                  {intro?.title && (
-                    <h2 className="home__panelTitle">{intro.title}</h2>
-                  )}
-                  {intro?.lead && (
-                    <p className="home__panelLead">{intro.lead}</p>
-                  )}
-                  {intro?.text && (
-                    <p className="home__panelText">{intro.text}</p>
-                  )}
-                </div>
+              </div>
+              <div
+                id={tabPanelId}
+                className="home__panel reveal reveal--swap is-visible"
+                role="tabpanel"
+                tabIndex={0}
+                aria-labelledby={
+                  options[activeIndex]?.key
+                    ? tabId(options[activeIndex].key)
+                    : undefined
+                }
+              >
+                {intro?.title && (
+                  <h2 className="home__panelTitle">{intro.title}</h2>
+                )}
+                {intro?.lead && <p className="home__panelLead">{intro.lead}</p>}
+                {intro?.text && <p className="home__panelText">{intro.text}</p>}
               </div>
             </div>
           </section>

@@ -20,39 +20,40 @@
 /* Intro */
 .home__intro {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   gap: t.$space-s;
 
   @include m.up(t.$bp-mobile) {
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     gap: t.$space-l;
     width: 100%;
   }
 }
 
 .home__introImg {
-  width: 100%;
+  width: 240px;
+  flex: 0 0 240px;
 
   @include m.up(t.$bp-mobile) {
-    width: 25%;
+    width: 240px;
+    flex: 0 0 240px;
   }
 }
 
 .home__portrait {
-  width: 100%;
-  max-width: 240px;
+  display: block;
+  width: 240px;
+  height: 320px;
   margin: 0 auto;
 
-  aspect-ratio: 3 / 4;
   object-fit: cover;
 
   border-radius: 24px;
   box-shadow: t.$shadow-lg;
 
   @include m.up(t.$bp-mobile) {
-    max-width: none;
     margin: 0;
   }
 }
@@ -67,9 +68,9 @@
   gap: t.$space-s;
 
   @include m.up(t.$bp-mobile) {
-    width: 75%;
+    flex: 1 1 auto;
+    width: auto;
     text-align: center;
-    margin: auto;
   }
 }
 
@@ -135,7 +136,7 @@
   }
 
   &.is-active {
-      background: t.$color-primary;
+    background: t.$color-primary;
     color: white;
     border-color: transparent;
   }
@@ -172,18 +173,44 @@
 /* Blocks */
 .home__blocks {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: t.$space-l;
   align-items: start;
+}
 
-  @include m.up(t.$bp-mobile) {
-    grid-template-columns: 1.3fr 0.9fr;
+@include m.up(t.$bp-mobile) {
+  .home__blocks {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
   }
 }
 
 .home__card {
   @include m.card(t.$color-card-background, t.$shadow-sm);
   text-align: left;
+
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: t.$space-s;
+}
+.home__card > * {
+  min-width: 0;
+}
+.home__card,
+.home__card p,
+.home__card h2,
+.home__card h3,
+.home__card a,
+.home__panel,
+.home__panel p,
+.home__panel h2,
+.home__panel h3 {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .home__card--accent {
@@ -193,6 +220,7 @@
 /* H2 */
 .home__h2 {
   @include m.title-h2;
+  margin-bottom: 0;
 }
 
 /* Highlights */
@@ -209,12 +237,12 @@
 
 .home__highlightCard {
   @include m.panel(t.$color-surface, t.$shadow-sm);
-  padding: 14px 16px;
+  padding: t.$space-xs;
 
   display: grid;
   grid-template-columns: 40px 1fr;
-  gap: t.$space-s;
-  align-items: start;
+  gap: t.$space-xs;
+  align-items: center;
 
   @include m.lift(-2px, t.$shadow-md);
 }
@@ -247,12 +275,17 @@
 .home__paragraphs {
   display: grid;
   gap: t.$space-s;
+  min-width: 0;
+  width: 100%;
+}
 
-  p {
-    margin: 0;
-    line-height: t.$line-height-text;
-    color: t.$color-text-secondary;
-  }
+.home__paragraphs p {
+  margin: 0;
+  line-height: t.$line-height-text;
+  color: t.$color-text-secondary;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .home__ctaRow {
