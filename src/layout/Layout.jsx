@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import AnalyticsTracker from "../components/AnalyticsTracker.jsx";
 
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
@@ -26,17 +27,12 @@ export default function Layout() {
 
   return (
     <>
-      <a href="#main-content" className="skip-link">
-        Aller au contenu
-      </a>
-
       <LocalBusinessJsonLd />
+      <AnalyticsTracker />
       <Header />
-
       <main id="main-content">
         <Outlet />
       </main>
-
       <Footer />
       <FloatingActions contactTo="/contact" contactLabel="Me contacter" />
     </>
