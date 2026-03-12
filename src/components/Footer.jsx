@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useMemo } from "react";
 import "./footer.scss";
-import Logo from "../assets/logo4.webp";
+import Logo from "../assets/logofootermp.webp";
+import LogoSP from "../assets/logosp.webp";
+
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { useContent } from "../content/useContent.js";
 import Signature from "./Signature.jsx";
@@ -17,7 +19,7 @@ export default function Footer() {
   const methodsRaw = node("contact.content.methods");
   const methods = useMemo(
     () => (Array.isArray(methodsRaw) ? methodsRaw : []),
-    [methodsRaw]
+    [methodsRaw],
   );
 
   const email = methods.find((m) => m.type === "email");
@@ -31,9 +33,18 @@ export default function Footer() {
       <footer className="footer" role="contentinfo">
         <div className="footer__inner">
           {/* Branding */}
-          <section className="footer__brand reveal" style={{ "--delay": "0ms" }}>
-            <img src={Logo} alt="Logo Manon Pontasse" className="footer__logo" />
-            <p className="footer__tagline">Éducatrice spécialisée indépendante</p>
+          <section
+            className="footer__brand reveal"
+            style={{ "--delay": "0ms" }}
+          >
+            <img
+              src={Logo}
+              alt="Logo Manon Pontasse"
+              className="footer__logo"
+            />
+            <p className="footer__tagline">
+              Éducatrice spécialisée indépendante
+            </p>
             <Signature type="main" align="left" variant="subtle" />
           </section>
 
@@ -46,7 +57,10 @@ export default function Footer() {
 
             <div className="footer__contactList">
               {email?.value && (
-                <a className="footer__contactLink" href={`mailto:${email.value}`}>
+                <a
+                  className="footer__contactLink"
+                  href={`mailto:${email.value}`}
+                >
                   <FiMail />
                   <span>{email.value}</span>
                 </a>
@@ -72,7 +86,10 @@ export default function Footer() {
           </section>
 
           {/* Légal */}
-          <section className="footer__legal reveal" style={{ "--delay": "160ms" }}>
+          <section
+            className="footer__legal reveal"
+            style={{ "--delay": "160ms" }}
+          >
             <h3 className="footer__title">Informations</h3>
 
             <div className="footer__links">
@@ -80,8 +97,20 @@ export default function Footer() {
               <Link to="/privacy">Confidentialité</Link>
             </div>
 
-            <p className="footer__copy">© {year} – Tous droits réservés</p>
+            <p className="footer__copy">Site web créé par :</p>
+            <a
+              href="https://www.thecodeofsp.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={LogoSP}
+                alt="Logo The Code of SP"
+                className="footer__logosp"
+              />
+            </a>
           </section>
+          <p className="footer__copy">© {year} – Tous droits réservés</p>
         </div>
       </footer>
     </>

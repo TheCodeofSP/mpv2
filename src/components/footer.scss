@@ -136,7 +136,7 @@
   @include m.hover {
     &:hover {
       transform: translateY(-1px);
-      text-decoration: underline
+      text-decoration: underline;
     }
   }
 
@@ -194,4 +194,11 @@
     t.$color-border,
     transparent
   );
+}
+
+.footer__logosp {
+  width: clamp(160px, 46vw, 150px);
+  height: auto;
+  display: block;
+  margin: auto;
 }

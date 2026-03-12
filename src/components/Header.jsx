@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar.jsx";
 
-import Logo from "../assets/logotest.webp";
+import Logo from "../assets/logomp.webp";
 import "./header.scss";
 
 export default function Header() {
