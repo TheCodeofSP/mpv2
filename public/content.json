@@ -1218,14 +1218,18 @@
       "intro": {
         "title": "Mentions légales",
         "subtitle": "Informations sur l’éditeur du site",
-        "lead": "À compléter selon votre statut et votre hébergeur."
+        "lead": "Informations légales concernant l’éditeur du site et son hébergement."
       },
       "content": {
-        "paragraphs": [
-          "Nom / statut : (à compléter)",
-          "Adresse : (à compléter)",
-          "Hébergeur : (à compléter)"
-        ]
+        "paragraphs": {
+          "Éditeur du site": "Manon Pontasse",
+          "Statut": "Auto-entrepreneur",
+          "Adresse": "GERSTHEIM, France",
+          "Email": "manonpontasse@gmail.com",
+          "SIRET": "933 730 665 00017",
+          "Hébergeur": "Vercel Inc.",
+          "Adresse de l’hébergeur": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis"
+        }
       }
     }
   },
@@ -1242,9 +1246,9 @@
         "emailLabel": "Email",
         "emailValue": "manonpontasse@gmail.com",
         "addressLabel": "Adresse",
-        "addressValue": "Strasbourg, France",
+        "addressValue": "GERSTHEIM, France",
         "siretLabel": "SIRET",
-        "siretValue": "À compléter"
+        "siretValue": "933 730 665 00017"
       },
       "publication": {
         "title": "Responsable de publication",
@@ -1253,9 +1257,9 @@
       "hosting": {
         "title": "Hébergement",
         "providerLabel": "Hébergeur",
-        "providerValue": "À compléter (OVH, Vercel, etc.)",
+        "providerValue": "Vercel",
         "addressLabel": "Adresse",
-        "addressValue": "À compléter"
+        "addressValue": "440 N Barranca Ave #4133, Covina, CA 91723, États-Unis"
       },
       "ip": {
         "title": "Propriété intellectuelle",
