@@ -95,22 +95,22 @@ export default function Footer() {
             <div className="footer__links">
               <Link to="/legal">Mentions légales</Link>
               <Link to="/privacy">Confidentialité</Link>
-            </div>
 
-            <p className="footer__copy">Site web créé par :</p>
-            <a
-              href="https://www.thecodeofsp.fr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={LogoSP}
-                alt="Logo The Code of SP"
-                className="footer__logosp"
-              />
-            </a>
+              <p className="footer__copy">Site web créé par :</p>
+              <a
+                href="https://www.thecodeofsp.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={LogoSP}
+                  alt="Logo The Code of SP"
+                  className="footer__logosp"
+                />
+              </a>
+              <p className="footer__copy">© {year} – Tous droits réservés</p>
+            </div>
           </section>
-          <p className="footer__copy">© {year} – Tous droits réservés</p>
         </div>
       </footer>
     </>
