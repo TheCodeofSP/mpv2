@@ -1,12 +1,6 @@
 @use "./style/tokens.scss" as t;
 @use "./style/mixins.scss" as m;
 
-/* Layout principal */
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
 main {
   flex: 1;

@@ -14,17 +14,14 @@
 
 /* Root */
 html {
-  color-scheme: light;
+  color-scheme: light only;
   scroll-behavior: smooth;
-
-  /* Header sticky : évite que les ancres passent sous le header */
   scroll-padding-top: 80px;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   scrollbar-gutter: stable;
+  background-color: t.$color-background;
 }
 
 /* Base */
@@ -32,18 +29,14 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-
   background-color: t.$color-background;
   color: t.$color-text-primary;
-
   font-family: t.$font-family-text;
   font-weight: t.$font-weight-text;
   font-size: t.$font-size-text;
   line-height: t.$line-height-text;
-
   padding: t.$space-xs;
 }
-
 /* Sélection (détail premium, très léger) */
 ::selection {
   background: rgba(226, 194, 143, 0.35); /* accent doux */
@@ -90,7 +83,7 @@ ol {
 }
 
 li {
-   list-style: none;
+  list-style: none;
 }
 
 /* Liens (important pour UX + premium) */
